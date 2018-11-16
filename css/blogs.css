@@ -1,0 +1,32 @@
+
+.e1 { grid-area: title;}
+.e2 { grid-area:date; }
+.e3 { grid-area:data;}
+.e4 { grid-area:author;}
+
+.wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5%;
+  grid-gap: 10px;
+}
+
+.box{
+  background-color: rgba(70, 100, 255, 1);
+  border: 3px solid black;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+  'title date'
+  'data  data'
+  'author author';
+}
+
+.box > div{
+  border: 1px solid black;
+}
+
+
+@media screen and (max-width: 600px) {
+  .wrap {grid-template-columns: 1fr}
+}

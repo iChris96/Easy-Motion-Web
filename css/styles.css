@@ -29,22 +29,6 @@ body{
   color: var(--main-nav-bar-color);
 }
 
-.container{
-  height: 100%;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr;
-  padding: 5%;
-  text-align: center;
-}
-
-
-.box{
-  background: rgba(13, 13, 13, 0.62);
-  text-align: center;
-  color: white;
-  padding: 10px;
-}
 
 /*NAVBAR*/
 .topnav {
