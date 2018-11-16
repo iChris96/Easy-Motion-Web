@@ -1,34 +1,46 @@
+:root{
+  --main-nav-bar-color: #0f00ffcc;
+  --main-nav-bar-color-active: #0A00A8;
+  --main-nav-bar-element-selected: #001769;
+}
+
 *{
   margin: 0;
   padding: 0;
 }
 
-html,body{
-  background-image: linear-gradient(to right top, #00ffd3, #00fbbf, #00f6aa, #00f193, #12eb7a);
+body{
   font-family: 'Nunito', sans-serif;
   height: 100%;
 }
 
-.container{
-  width: 100%;
-  height: 200px;
-  background: red;
-  display: grid;
-  grid-template-columns: 50% 30% 15%;
+/* posicion del logo*/
+.logo{
+  width: 100px;
+  height: 70px;
+  display: inline;
+  text-align: center;
 }
 
-.container2{
-  width: 100%;
-  height: 200px;
-  background: blue;
-  display: grid;
-  grid-template-columns: 50% 30% 15%;
-  column-gap: 10px;
-  row-gap: 10px;
+.logoText{
+  font-family: 'Pacifico';
+  font-weight: lighter;
+  font-size: 50px;
+  color: var(--main-nav-bar-color);
 }
+
+.container{
+  height: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding: 5%;
+  text-align: center;
+}
+
 
 .box{
-  background: rgb(249, 210, 5);
+  background: rgba(13, 13, 13, 0.62);
   text-align: center;
   color: white;
   padding: 10px;
@@ -37,10 +49,11 @@ html,body{
 /*NAVBAR*/
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--main-nav-bar-color);
   text-align: center;
 }
 
+/*Elementos navBar simples*/
 .topnav a {
   display:inline-block;
   color: #f2f2f2;
@@ -50,8 +63,9 @@ html,body{
   font-size: 17px;
 }
 
+/*Elemento pagina actual*/
 .active {
-  background-color: #4CAF50;
+  background-color: var(--main-nav-bar-color-active);
   color: white;
 }
 
@@ -92,8 +106,9 @@ html,body{
     text-align: left;
 }
 
+/*Hover selenccion elementos*/
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
+  background-color: var(--main-nav-bar-element-selected);
   color: white;
 }
 
