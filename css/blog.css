@@ -1,0 +1,32 @@
+
+.e1 { grid-area: title;}
+.e2 { grid-area:date; text-align: center;}
+.e3 { grid-area:data;}
+
+
+.wrap{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 5%;
+  grid-gap: 10px;
+
+}
+
+.box{
+  background-color: rgba(70, 100, 255, 1);
+  border: 3px solid black;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+  'title date'
+  'data  date'
+}
+
+.box > div{
+  border: 1px solid black;
+}
+
+
+@media screen and (max-width: 600px) {
+  .wrap {grid-template-columns: 1fr}
+}
