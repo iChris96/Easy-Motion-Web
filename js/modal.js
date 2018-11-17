@@ -1,25 +1,40 @@
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
+/*modal {create, edit}*/
+var modal = document.getElementsByClassName("modal");
+/*btn {create}*/
 var btn = document.getElementById("myBtn");
+/*escucha para mostrar el modal create*/
+btn.addEventListener("click", function() {
+    modal[0].style.display = "block";
+});
+/*selecciona todos los edit buttoms*/
+var editButtons = document.querySelectorAll('.editButton');
+/*selecciona todos los span de cierre*/
+var span = document.querySelectorAll('.close');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+/*escucha todos los botones edit*/
+editButtons.forEach(function(elem) {
+    elem.addEventListener("click", function() {
+        var id = elem.dataset.id;
+        var title = elem.dataset.title;
+        var author = elem.dataset.author;
+        modal[1].style.display = "block";
+        modal[1].childNodes[3].childNodes[3].childNodes[1][0].value = title;
+        modal[1].childNodes[3].childNodes[3].childNodes[1][1].value = author;
+    });
+});
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
+/*escucha todos los span de cierre*/
+span.forEach(function(elem) {
+    elem.addEventListener("click", function() {
+        elem.parentNode.parentNode.parentNode.style.display = "none";
+    });
+});
+/*cierra el modal*/
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modal[0]) {
+        modal[0].style.display = "none";
+    }else if(event.target == modal[1]){
+        modal[1].style.display = "none";
     }
 }

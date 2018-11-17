@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./css/manageBlogs.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
     <title>Blogs</title>
@@ -66,8 +67,38 @@
       <h3>Modal Footer</h3>
     </div>
   </div>
-
 </div>
+
+<div id="myEditModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Edit Blog</h2>
+    </div>
+    <div class="modal-body">
+    <form action="" method="POST" class="formulario" name="create">
+        <input type="text" name="title" placeholder="Titulo">
+        <input type="text" name="author" placeholder="Author">
+        <select name="category">
+          <option value="nutricion">Nutricion</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <textarea name="subject" placeholder="Contenido blog.." style="height:200px"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- Tabla Crud -->
 <div class="container-table">
@@ -91,7 +122,10 @@
       <td class="cell">2018-02-12</td>
       <td class="cell">Juan Roberto Guzman</td>
       <td class="cell">Nutricion</td>
-      <td class="cell">Editar Borrar</td>
+      <td class="cell">
+        <button class="editButton" data-id="1" data-title="titulo" data-author="author1"><i class="fa fa-edit"></i></button>
+        <button class="deleteButton"><i class="fa fa-close"></i></button>
+      </td>
     </tr>
     <tr class="row">
       <td class="cell">2</td>
@@ -100,7 +134,10 @@
       <td class="cell">2018-02-12</td>
       <td class="cell">Juan Roberto Guzman</td>
       <td class="cell">Nutricion</td>
-      <td class="cell">Editar Borrar</td>
+      <td class="cell">
+        <button class="editButton" data-id="2" data-title="titulo2" data-author="author2"><i class="fa fa-edit"></i></button>
+        <button class="deleteButton"><i class="fa fa-close"></i></button>
+      </td>
     </tr>
     <tr class="row">
       <td class="cell">123</td>
@@ -109,7 +146,10 @@
       <td class="cell">2018-02-12</td>
       <td class="cell">Juan Roberto Guzman</td>
       <td class="cell">Nutricion</td>
-      <td class="cell">Editar Borrar</td>
+      <td class="cell">
+        <button class="editButton" data-id="3" data-title="titulo3" data-author="author3"><i class="fa fa-edit"></i></button>
+        <button class="deleteButton"><i class="fa fa-close"></i></button>
+      </td>
     </tr>
   </tbody>
 </table>

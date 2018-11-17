@@ -6,6 +6,22 @@
   background-color: rgb(12, 182, 8);
 }
 
+.editButton{
+  display: inline-block;
+  background-color: rgb(242, 167, 0);
+  margin-left: 8px;
+  border: none;
+  width: 35%;
+}
+
+.deleteButton{
+  display: inline-block;
+  background-color: rgb(242, 0, 0);
+  border-radius: 3px;
+  border: none;
+  width: 35%;
+}
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -103,7 +119,7 @@ input[type=submit]:hover {
 }
 
 
-/* TABLE */
+/* --------------TABLE------------------ */
 
 .container-table{
   display: grid;
