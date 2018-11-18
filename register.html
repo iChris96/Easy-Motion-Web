@@ -7,35 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
-    <title>Login</title>
+    <title>Register</title>
   </head>
   <body>
     <div class="logo">
       <h1 class="logoText">Easy Motion</h1>
     </div>
 <div class="container">
-  <form action="/action_page.php">
+  <form action="">
     <div class="row">
-      <h2 style="text-align:center">Login</h2>
+      <h2 style="text-align:center">Register</h2>
 
       <div class="col">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="weight" placeholder="Weight" required>
+        <input type="text" name="height" placeholder="Height" required>
         <input type="text" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Login">
+        <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Error!</strong> Mensaje con errores!
+        </div>
+
+        <input type="submit" value="Register!">
       </div>
 
     </div>
   </form>
-<div class="bottom-container">
-  <div class="row">
-    <div class="col">
-      <a href="#" class="btn options">Sign up</a>
-    </div>
-    <div class="col">
-      <a href="#" class="btn options">Forgot password?</a>
-    </div>
-  </div>
-</div>
 </div>
   </body>
 </html>
