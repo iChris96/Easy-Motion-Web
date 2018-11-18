@@ -1,0 +1,123 @@
+:root{
+  --main-nav-bar-color: #0f00ffcc;
+  --main-nav-bar-color-active: #0A00A8;
+  --main-nav-bar-element-selected: #001769;
+}
+
+
+img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.container{
+  -webkit-box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
+  box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
+  margin: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+  background-color: var(--main-nav-bar-color);
+  width: 50%;
+  text-align: center;
+}
+
+label{
+  display: block;
+  padding-top: 10px;
+  font-size: 22px;
+  color: rgb(227, 226, 226);
+}
+
+.name{
+  font-weight: bold;
+}
+
+.fa-edit{
+  float: right;
+}
+
+a{
+  color: black;
+}
+
+i{
+  margin-right: 5px;
+}
+
+th{
+  background-color: blue;
+}
+
+.columnheader, .cell{
+  border: 2px solid black;
+}
+
+.cell{
+  overflow: hidden;
+  max-width: 120px;
+}
+
+table{
+  width: 100%;
+}
+
+@media
+  only screen
+  and (max-width: 600px), (min-device-width: 768px)
+  and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .columnheader, .cell{
+    border: 2px solid black;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  tr:nth-child(odd) {
+    /*background: #ccc;*/
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+  Label the data
+  You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+  */
+  td:nth-of-type(1):before { content: "Date"; }
+  td:nth-of-type(2):before { content: "Weight"; }
+  td:nth-of-type(3):before { content: "Height"; }
+
+
+}
