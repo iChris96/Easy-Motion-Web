@@ -14,6 +14,7 @@ var span = document.querySelectorAll('.close');
 /*escucha todos los botones edit*/
 editButtons.forEach(function(elem) {
     elem.addEventListener("click", function() {
+        /*obtenemos los dataset de la columna y los agregamos al editModal*/
         var id = elem.dataset.id;
         var title = elem.dataset.title;
         var author = elem.dataset.author;
