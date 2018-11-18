@@ -1,0 +1,36 @@
+.wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 5%;
+  grid-gap: 10px;
+
+}
+
+.box{
+  background-color: rgba(70, 100, 255, 1);
+  border: 3px solid black;
+/*  display: grid;
+  grid-template-columns: 1fr; */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.day, .title{
+  background-color: #1539f0;
+  color: white;
+  border-bottom: #050403 2px solid;
+}
+/* rows
+.box > div{
+  border: 1px solid black;
+}
+*/
+/*
+.routines{
+  overflow: hidden;
+}
+*/
+
+@media screen and (max-width: 600px) {
+  .wrap {grid-template-columns: 1fr}
+}
