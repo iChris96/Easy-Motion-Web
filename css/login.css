@@ -62,6 +62,10 @@ input[type=submit]:hover {
   clear: both;
 }
 
+h2{
+  text-align: center;
+}
+
 /* hide some text on medium and large screens */
 .hide-md-lg {
   display: none;

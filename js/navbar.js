@@ -1,7 +1,7 @@
-var btn = document.getElementsByClassName("icon");
+let btn = document.getElementsByClassName("icon");
 
 btn[0].addEventListener("click", ()=>{
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
       x.className += " responsive";
   } else {
