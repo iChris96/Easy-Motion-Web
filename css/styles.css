@@ -22,12 +22,29 @@ body{
   text-align: center;
 }
 
+/* Photo Session */
+.session{
+  margin-top: 5px;
+  width: 100%;
+  float: right;
+  font-size: 15px;
+  text-align: right;
+}
+.photo{
+  border: solid blue;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+
 .logoText{
   font-family: 'Pacifico';
   font-weight: lighter;
   font-size: 50px;
   color: var(--main-nav-bar-color);
 }
+
 
 
 /*NAVBAR*/
@@ -88,6 +105,13 @@ body{
     text-decoration: none;
     display: block;
     text-align: left;
+}
+
+.session{
+  float: right;
+  background-color: white;
+  text-align: right;
+  padding-right: 10px;
 }
 
 /*Hover selenccion elementos*/

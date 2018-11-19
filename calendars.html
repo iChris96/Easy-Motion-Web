@@ -13,7 +13,7 @@
       <h1 class="logoText">Easy Motion</h1>
     </div>
     <div class="topnav" id="myTopnav">
-      <a href="#home">Home</a>
+      <a href="#home" class="active">Home</a>
       <div class="dropdown">
         <button class="dropbtn">Calendarios
           <i class="fa fa-caret-down"></i>
@@ -24,7 +24,7 @@
           <a href="#">Link 3</a>
         </div>
       </div>
-      <div class="dropdown active" >
+      <div class="dropdown">
         <button class="dropbtn">Blogs
           <i class="fa fa-caret-down"></i>
         </button>
@@ -35,9 +35,21 @@
         </div>
       </div>
       <a href="#">Nosotros</a>
-      <a href="#">Inicia Sesión</a>
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <div class="dropdown">
+        <button class="dropbtn">Username
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Perfil</a>
+          <a href="#">Calendarios</a>
+          <a href="#">Agregar Progreso</a>
+          <a href="#">LogOut</a>
+        </div>
+      </div>
+      <a href="javascript:void(0);" class="icon">&#9776;</a>
     </div>
+
+    <script src="./js/navbar.js"></script>
     <a href="#" class="suscribe">
       Suscribir
     </a>
