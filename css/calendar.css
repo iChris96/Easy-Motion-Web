@@ -13,9 +13,11 @@
   grid-template-columns: 1fr; */
   word-break: break-all;
   word-wrap: break-word;
+  font-size: 14px;
 }
 
 .day, .title{
+  font-size: 18px;
   background-color: #1539f0;
   color: white;
   border-bottom: #050403 2px solid;
