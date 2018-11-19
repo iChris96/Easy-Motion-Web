@@ -156,6 +156,8 @@
 
 .exercise{
   border: 2px solid black;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .modal-footer {
