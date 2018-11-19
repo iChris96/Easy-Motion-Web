@@ -34,7 +34,7 @@ label{
   font-weight: bold;
 }
 
-.fa-edit{
+.fa-edit, .fa-plus{
   float: right;
 }
 
