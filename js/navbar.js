@@ -1,4 +1,4 @@
-let btn = document.getElementsByClassName("icon");
+var btn = document.getElementsByClassName("icon");
 
 btn[0].addEventListener("click", ()=>{
   let x = document.getElementById("myTopnav");
