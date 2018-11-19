@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/assingCalendar.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
+    <title>assingRoutine</title>
+  </head>
+  <body>
+    <div class="logo">
+      <h1 class="logoText">Easy Motion</h1>
+    </div>
+    <div class="topnav" id="myTopnav">
+      <a href="#home">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Calendarios
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="dropdown active" >
+        <button class="dropbtn">Blogs
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <a href="#">Nosotros</a>
+      <a href="#">Inicia Sesión</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+<div class="container">
+  <form action="">
+    <div class="row">
+      <h2 style="text-align:center">Asignar Rutina</h2>
+
+      <div class="col">
+        <select name="routine">
+          <option value="nutricion">Nutricion</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <input type="text" name="day" placeholder="Day" required>
+        <input type="submit" value="Terminar">
+      </div>
+
+    </div>
+  </form>
+
+</div>
+  </body>
+</html>
