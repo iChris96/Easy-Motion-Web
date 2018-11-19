@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./css/manageBlogs.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
     <title>Blogs</title>
   </head>
@@ -110,6 +110,24 @@
 </div>
 
 
+<div class="nav-filters">
+    <ul>
+      <li>
+        <label for="">Autor:</label>
+        <input type="text" name="Auth" value="" placeholder="Autor">
+      </li>
+      <li>
+        <label for="">Titulo:</label>
+        <input type="text" name="Title" value="" placeholder="Titulo">
+      </li>
+      <li>
+        <label for="">Categoria:</label>
+        <input type="text" name="Category" value="" placeholder="Categoria">
+      </li>
+    </ul>
+</div>
+
+
 
 
 <!-- Tabla Crud -->
@@ -117,12 +135,48 @@
 <table class="table">
   <thead class="rowgroup">
     <tr class="row">
-      <th class="columnheader">id</th>
-      <th class="columnheader">title</th>
-      <th class="columnheader">data</th>
-      <th class="columnheader">date</th>
-      <th class="columnheader">author</th>
-      <th class="columnheader">category</th>
+      <th class="columnheader">
+        <a class="sort" href="#">Id</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
+      <th class="columnheader">
+        <a class="sort" href="#">Title</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
+      <th class="columnheader">
+        <a class="sort" href="#">Data</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
+      <th class="columnheader">
+        <a class="sort" href="#">Date</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
+      <th class="columnheader">
+        <a class="sort" href="#">Author</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
+      <th class="columnheader">
+        <a class="sort" href="#">Category</a>
+        <div class="order">
+          <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
+          <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
+        </div>
+      </th>
       <th class="columnheader">options</th>
     </tr>
   </thead>

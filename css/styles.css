@@ -129,6 +129,27 @@ body{
     display: block;
 }
 
+.nav-filters{
+  text-align: center;
+}
+
+.nav-filters ul li{
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.nav-filters input[type=text], select, textarea {
+    border: 1px solid #0066ff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.nav-filters input[type=text]:hover, select:hover, textarea:hover {
+    border: 3px solid #00ffa3;
+}
+
+
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;

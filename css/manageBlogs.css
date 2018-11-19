@@ -22,7 +22,7 @@
   width: 35%;
 }
 
-input[type=text], select, textarea {
+.formulario input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -32,6 +32,8 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     resize: vertical;
 }
+
+
 
 input[type=submit] {
     background-color: rgb(12, 182, 8);
@@ -104,6 +106,23 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+/*sort accion*/
+.sort:hover{
+  text-shadow: 2px 2px 8px #fff;
+}
+/* flechas*/
+.order{
+  float: right;
+}
+
+.order:hover{
+  text-shadow: 0px 0px 6px #fff;
+}
+
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
@@ -138,6 +157,7 @@ input[type=submit]:hover {
 
 th{
   background-color: blue;
+  color: white;
 }
 
 .columnheader, .cell{
