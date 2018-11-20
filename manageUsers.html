@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
-    <title>Blogs</title>
+    <title>manageUsers</title>
   </head>
   <body>
     <div class="logo">
@@ -59,18 +59,24 @@
   <div class="modal-content">
     <div class="modal-header green">
       <span class="close">&times;</span>
-      <h2>Nuevo Blog</h2>
+      <h2>Nuevo User</h2>
     </div>
     <div class="modal-body">
     <form action="" method="POST" class="formulario" name="create">
-        <input type="text" name="title" placeholder="Titulo">
-        <input type="text" name="author" placeholder="Author">
-        <select name="category">
-          <option value="nutricion">Nutricion</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+        <input type="text" name="name" placeholder="Nombre">
+        <input type="text" name="email" placeholder="Correo">
+        <input type="text" name="mobile" placeholder="Telefono">
+        <input type="text" name="password" placeholder="Password">
+        <label for="role">Role</label>
+        <select name="role" placeholder="Role">
+          <option value="0">No</option>
+          <option value="1">Si</option>
         </select>
-        <textarea name="subject" placeholder="Contenido blog.."></textarea>
+        <label for="confirmed">Confirmado</label>
+        <select name="confirmed" placeholder="Confirmed">
+          <option value="0">No</option>
+          <option value="1">Si</option>
+        </select>
         <input type="submit" value="Submit">
     </form>
 
@@ -87,20 +93,25 @@
   <div class="modal-content">
     <div class="modal-header yellow">
       <span class="close">&times;</span>
-      <h2>Edit Blog</h2>
+      <h2>Edit User</h2>
     </div>
     <div class="modal-body">
-    <form action="" method="POST" class="formulario" name="create">
-        <input type="text" name="title" placeholder="Titulo">
-        <input type="text" name="author" placeholder="Author">
-        <select name="category">
-          <option value="nutricion">Nutricion</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <textarea name="subject" placeholder="Contenido blog.." style="height:200px"></textarea>
-        <input type="submit" value="Submit">
-    </form>
+      <form action="" method="POST" class="formulario" name="create">
+          <input type="text" name="name" placeholder="Nombre">
+          <input type="text" name="mobile" placeholder="Telefono">
+          <input type="text" name="email" placeholder="Correo">
+          <label for="role">Role</label>
+          <select name="role" placeholder="Role">
+            <option value="0">No</option>
+            <option value="1">Si</option>
+          </select>
+          <label for="confirmed">Confirmado</label>
+          <select name="confirmed" placeholder="Confirmed">
+            <option value="0">No</option>
+            <option value="1">Si</option>
+          </select>
+          <input type="submit" value="Submit">
+      </form>
 
     </div>
     <div class="modal-footer yellow">
@@ -113,16 +124,16 @@
 <div class="nav-filters">
     <ul>
       <li>
-        <label for="">Autor:</label>
-        <input type="text" name="Auth" value="" placeholder="Autor">
+        <label for="">Name:</label>
+        <input type="text" name="Name" value="" placeholder="Nombre">
       </li>
       <li>
-        <label for="">Titulo:</label>
-        <input type="text" name="Title" value="" placeholder="Titulo">
+        <label for="">Email:</label>
+        <input type="text" name="Email" value="" placeholder="Email">
       </li>
       <li>
-        <label for="">Categoria:</label>
-        <input type="text" name="Category" value="" placeholder="Categoria">
+        <label for="">Mobile:</label>
+        <input type="text" name="Mobile" value="" placeholder="Mobile">
       </li>
     </ul>
 </div>
@@ -144,35 +155,35 @@
         </div>
       </th>
       <th class="columnheader">
-        <a class="sort" href="#">Title</a>
+        <a class="sort" href="#">Name</a>
         <div class="order">
           <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
           <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
         </div>
       </th>
       <th class="columnheader">
-        <a class="sort" href="#">Data</a>
+        <a class="sort" href="#">Mobile</a>
         <div class="order">
           <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
           <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
         </div>
       </th>
       <th class="columnheader">
-        <a class="sort" href="#">Date</a>
+        <a class="sort" href="#">Email</a>
         <div class="order">
           <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
           <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
         </div>
       </th>
       <th class="columnheader">
-        <a class="sort" href="#">Author</a>
+        <a class="sort" href="#">Role</a>
         <div class="order">
           <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
           <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
         </div>
       </th>
       <th class="columnheader">
-        <a class="sort" href="#">Category</a>
+        <a class="sort" href="#">Confirmed</a>
         <div class="order">
           <a href="#"><i class="fa fa-long-arrow-up fa-xs"></i></a>
           <a href="#"><i class="fa fa-long-arrow-down fa-xs"></i></a>
@@ -185,39 +196,39 @@
     <tr class="row">
       <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
       <td class="cell">1</td>
-      <td class="cell">Este es un titulo algo medianoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</td>
-      <td class="cell">En nueva york....</td>
-      <td class="cell">2018-02-12</td>
-      <td class="cell">Juan Roberto Guzman</td>
-      <td class="cell">Nutricion</td>
+      <td class="cell">Juan</td>
+      <td class="cell">3312426507</td>
+      <td class="cell">HolasoyJuan@gmail.com</td>
+      <td class="cell">1</td>
+      <td class="cell">1</td>
       <td class="cell">
-        <button class="editButton" data-id="1" data-title="titulo" data-author="author1"><i class="fa fa-edit"></i></button>
+        <button class="editButton" data-id="1" data-name="User1" data-mobile="3312" data-mail="user1@gmail.com"><i class="fa fa-edit"></i></button>
         <button class="deleteButton"><i class="fa fa-close"></i></button>
       </td>
     </tr>
     <tr class="row">
       <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
       <td class="cell">2</td>
-      <td class="cell">Este es un titulo algo mediano</td>
-      <td class="cell">En nueva york....</td>
-      <td class="cell">2018-02-12</td>
-      <td class="cell">Juan Roberto Guzman</td>
-      <td class="cell">Nutricion</td>
+      <td class="cell">Juan</td>
+      <td class="cell">3312426507</td>
+      <td class="cell">HolasoyJuan@gmail.com</td>
+      <td class="cell">1</td>
+      <td class="cell">1</td>
       <td class="cell">
-        <button class="editButton" data-id="2" data-title="titulo2" data-author="author2"><i class="fa fa-edit"></i></button>
+        <button class="editButton" data-id="2" data-name="User2" data-mobile="3312" data-mail="user1@gmail.com"><i class="fa fa-edit"></i></button>
         <button class="deleteButton"><i class="fa fa-close"></i></button>
       </td>
     </tr>
     <tr class="row">
       <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
-      <td class="cell">123</td>
-      <td class="cell">Este es un titulo algo mediano</td>
-      <td class="cell">En nueva york....</td>
-      <td class="cell">2018-02-12</td>
-      <td class="cell">Juan Roberto Guzman</td>
-      <td class="cell">Nutricion</td>
+      <td class="cell">3</td>
+      <td class="cell">Juan</td>
+      <td class="cell">3312426507</td>
+      <td class="cell">HolasoyJuan@gmail.com</td>
+      <td class="cell">1</td>
+      <td class="cell">1</td>
       <td class="cell">
-        <button class="editButton" data-id="3" data-title="titulo3" data-author="author3"><i class="fa fa-edit"></i></button>
+        <button class="editButton" data-id="3" data-name="User3" data-mobile="3312" data-mail="user3@gmail.com"><i class="fa fa-edit"></i></button>
         <button class="deleteButton"><i class="fa fa-close"></i></button>
       </td>
     </tr>
@@ -225,12 +236,12 @@
 </table>
 <div class="buttons">
   <button class="button red" type="button" name="deleteAll">Eliminar Sel</button>
-  <button class="button green" id="myBtn">Nuevo Blog</button>
+  <button class="button green" id="myBtn">Add User</button>
 </div>
 </div>
 
 <!-- Scrip Modal -->
-<script src="./js/modal.js"></script>
+<script src="./js/modalUser.js"></script>
 
 
   </body>
