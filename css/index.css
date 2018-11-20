@@ -59,7 +59,7 @@ img{
 
 .main{
   float: left;
-  width: 70%;
+  width: 60%;
   display: grid;
   grid-column-gap: 5px;
   grid-template-columns: 1fr;

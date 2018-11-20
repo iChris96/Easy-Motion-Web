@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/slider.css" media="screen" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:400i|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Easy-Motion</title>
   </head>
   <body>
@@ -49,8 +51,36 @@
       <a href="javascript:void(0);" class="icon">&#9776;</a>
     </div>
 
-      <script src="./js/navbar.js"></script>
+  <script src="./js/navbar.js"></script>
 
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="./img/img_nature_wide.jpg" >
+</div>
+
+<div class="mySlides fade">
+  <img src="./img/img_snow_wide.jpg" >
+</div>
+
+<div class="mySlides fade">
+  <img src="./img/img_mountains_wide.jpg" >
+</div>
+
+<a class="prev" >&#10094;</a>
+<a class="next" >&#10095;</a>
+
+</div>
+<br>
+
+<div class="span">
+  <span class="dot" data-id="1"></span>
+  <span class="dot" data-id="2"></span>
+  <span class="dot" data-id="3"></span>
+</div>
+
+  <script src="./js/slider.js"></script>
 
         <div class="container">
 
@@ -75,10 +105,14 @@
 
           <div class="slider">
             <h1>Síguenos!</h1>
-            <div class="box">Facebook</div>
-            <div class="box">Intagram</div>
-            <div class="box">Youtube</div>
-            <div class="box">Twitter</div>
+            <div class="box"><i class="fab fa-facebook" aria-hidden="true"></i>
+              Facebook</div>
+            <div class="box"><i class="fab fa-instagram" aria-hidden="true"></i>
+              Intagram</div>
+            <div class="box"><i class="fab fa-youtube" aria-hidden="true"></i>
+            Youtube</div>
+            <div class="box"><i class="fab fa-twitter" aria-hidden="true"></i>
+            Twitter</div>
             <h1>Calendarios</h1>
             <div class="box">Militar<img src="./img/calendar.png" alt=""> </div>
             <div class="box">Express<img src="./img/calendar.png" alt=""> </div>
@@ -88,9 +122,6 @@
 
         </div>
 
-  <div class="footer">
-    Easy-Motion
-  </div>
 
 
   </body>
