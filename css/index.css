@@ -72,7 +72,7 @@ img{
   width: 300px;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .slider{
     float: none;
     margin: 10px auto;
@@ -90,7 +90,7 @@ img{
 }
 
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
