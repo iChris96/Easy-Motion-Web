@@ -14,6 +14,16 @@ body{
   height: 100%;
 }
 
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: var(--main-nav-bar-color);
+   color: white;
+   text-align: center;
+}
+
 /* posicion del logo*/
 .logo{
   width: 100px;
@@ -150,9 +160,7 @@ body{
 
 
 
-
-@media (max-width: 600px) {
-
+@media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -160,7 +168,6 @@ body{
     float: right;
     display: block;
   }
-}
 
   .topnav{text-align: inherit;}
   .topnav.responsive {position: relative;}
