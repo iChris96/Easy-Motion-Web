@@ -114,6 +114,6 @@ input[type="submit"]{
   .container{display: block}
   input{width: 100%;}
   .mini-form{
-    padding: 0 0;
+    padding: 10px 0;
    }
 }
