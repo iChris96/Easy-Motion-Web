@@ -23,18 +23,30 @@ section{
 
 
 .slider{
+  background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(4, 255, 197, 0.5)), to(rgba(0, 0, 0, 0.5)) ), url(../img/test-photo.jpg);
+  background-image: -webkit-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
+  background-image: -o-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
   background-image: linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
   background-position: bottom;
 }
 
 .cover{
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-size: cover;
   background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 400px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 
@@ -66,23 +78,30 @@ section{
   padding: 0 10px;
 }
 
+.footer .container p{
+  padding: 0 10px;
+}
+
 
 .box{
   background-color: var(--var-header-color);
   background-color: #1e1d23;
   border-radius: 2px;
-  box-shadow: 0px 3px 10px black;
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
   padding: 50px 20px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-evenly;
 }
 
 .links .box a{
   text-align: center;
   text-decoration: none;
+  width: 120px;
 }
 
 .links .box a:hover > i{
