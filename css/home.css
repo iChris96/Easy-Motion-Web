@@ -50,36 +50,17 @@ section{
 }
 
 
-.main{
-  background-color: var(--main-color);
-  background-color: rgb(16, 217, 127);
-  padding: 75px 0;
-}
-
-.footer{
-  background-color: var(--footer-color);
-  background-color: rgb(164, 164, 164);
-  padding: 75px 0;
-}
-
 .links{
   background-color: var(--main-color);
   background-color: rgb(16, 217, 127);
   padding-bottom: 3px;
 }
 
+
 .container{
   display: block;
   margin: 0 auto;
   max-width: 900px;
-}
-
-.main .container p{
-  padding: 0 10px;
-}
-
-.footer .container p{
-  padding: 0 10px;
 }
 
 
@@ -121,4 +102,25 @@ section{
 .box h5{
   color: blue;
   background-color: yellow;
+}
+
+.main{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  padding: 75px 0;
+}
+
+.footer{
+  background-color: var(--footer-color);
+  background-color: rgb(164, 164, 164);
+  padding: 75px 0;
+}
+
+
+.main .container p{
+  padding: 0 10px;
+}
+
+.footer .container p{
+  padding: 0 10px;
 }
