@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles2.css">
-    <link rel="stylesheet" href="./css/profile2.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -56,23 +56,48 @@
     </header>
 
 
-    <section class="login">
+    <section class="profile">
       <div class="container">
-        <div class="mini-form">
-          <h2>Login</h2>
-          <form action="/action_page.php">
-            <div class="inputs">
-                <input type="text" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-            </div>
-            <div class="remember">
-                <a class="" href="./forgot.html">Forgot Password?</a>
-            </div>
-            <div class="buttons">
-                 <input type="submit" value="Login">
-            </div>
+        <div class="profile-info">
+          <a href="./editProfile.html"><i class="fa fa-edit"></i></a>
+          <img src="./img/EasyMotionLogo.png" alt="">
+          <label for="" class="name"><i class="fa fa-mobile"></i>Name</label>
+          <label for=""><i class="fa fa-mobile"></i>3315458708</label>
+          <label for=""><i class="fa fa-envelope"></i>email</label>
+       </div>
+      </div>
+    </section>
 
-          </form>
+    <section class="progress">
+      <div class="container">
+        <div class="progress-info">
+          <table class="table">
+            <thead class="rowgroup">
+              <tr class="row">
+                <th class="columnheader">date</th>
+                <th class="columnheader">weight</th>
+                <th class="columnheader">height</th>
+              </tr>
+            </thead>
+            <tbody class="rowgroup">
+              <a href="./progress.html"><i class="fa fa-plus"></i></a>
+              <tr class="row">
+                <td class="cell">2018-05-03</td>
+                <td class="cell">85</td>
+                <td class="cell">180</td>
+              </tr>
+              <tr class="row">
+                <td class="cell">2019-02-01</td>
+                <td class="cell">85</td>
+                <td class="cell">180</td>
+              </tr>
+              <tr class="row">
+                <td class="cell">2020-05-02</td>
+                <td class="cell">85</td>
+                <td class="cell">180</td>
+              </tr>
+
+            </tbody>
        </div>
       </div>
     </section>

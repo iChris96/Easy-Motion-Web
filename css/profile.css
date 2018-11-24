@@ -1,123 +1,112 @@
 :root{
-  --main-nav-bar-color: #0f00ffcc;
-  --main-nav-bar-color-active: #0A00A8;
-  --main-nav-bar-element-selected: #001769;
+  --var-body-color: #f6f9fe;
+  --var-header-color: #1e1d23;
+  --main-color: rgb(16, 217, 127);
+  --footer-color: rgb(164, 164, 164);
 }
 
+*{
+  font-family: 'lato';
+  padding: 0;
+  margin: 0;
+  color: white;
+}
 
 img{
-  border-radius: 50%;
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+}
+
+body{
+  background-color: var(--var-body-color);
+  background-color: #f6f9fe;
+}
+
+section{
+  width: 100%;
 }
 
 .container{
-  -webkit-box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
-  -moz-box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
-  box-shadow: 14px 10px 12px -2px rgba(0,0,0,0.25);
-  margin: auto;
-  margin-top: 10px;
-  padding-top: 10px;
-  background-color: var(--main-nav-bar-color);
-  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px;
   text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-
-label{
+/*profile secction*/
+.profile-info{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
   display: block;
-  padding-top: 10px;
-  font-size: 22px;
-  color: rgb(227, 226, 226);
+  text-align: center;
+  width: 70%;
+  padding: 10px 10px;
 }
 
-.name{
-  font-weight: bold;
+.profile-info label{
+  padding: 10px 0;
+  display: block;
 }
 
+.profile-info img{
+
+}
+
+.profile-info a{
+  display: block;
+  height: 25px;
+}
+
+.profile, .progress{
+  padding: 30px 0;
+}
+
+/*icons right*/
 .fa-edit, .fa-plus{
   float: right;
 }
 
-a{
-  color: black;
+/*progress-info sec*/
+.progress-info{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
+  display: block;
+  text-align: center;
+  width: 70%;
+  padding: 10px 10px;
+  min-width: 300px;
 }
 
-i{
-  margin-right: 5px;
+      /*T A B L E */
+table{
+  width: 100%;
 }
 
 th{
-  background-color: blue;
+  background-color: black;
 }
 
 .columnheader, .cell{
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .cell{
   overflow: hidden;
   max-width: 120px;
+  background-color: var(--var-header-color);
+  background-color:  #1e1d23;
 }
 
-table{
-  width: 100%;
-}
 
-@media
-  only screen
-  and (max-width: 600px), (min-device-width: 768px)
-  and (max-device-width: 1024px)  {
-
-  /* Force table to not be like tables anymore */
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  .columnheader, .cell{
-    border: 2px solid black;
-  }
-
-  tr {
-    margin: 0 0 1rem 0;
-  }
-
-  tr:nth-child(odd) {
-    /*background: #ccc;*/
-  }
-
-  td {
-    /* Behave  like a "row" */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%;
-  }
-
-  td:before {
-    /* Now like a table header */
-    position: absolute;
-    /* Top/left values mimic padding */
-    top: 0;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-  }
-
-  /*
-  Label the data
-  You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
-  */
-  td:nth-of-type(1):before { content: "Date"; }
-  td:nth-of-type(2):before { content: "Weight"; }
-  td:nth-of-type(3):before { content: "Height"; }
-
+@media screen and (max-width: 400px) {
 
 }
