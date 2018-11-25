@@ -1,32 +1,130 @@
-
-.e1 { grid-area: title;}
-.e2 { grid-area:date; }
-.e3 { grid-area:data;}
-.e4 { grid-area:author;}
-
-.wrap{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 5%;
-  grid-gap: 10px;
+:root{
+  --var-body-color: #f6f9fe;
+  --var-header-color: #1e1d23;
+  --main-color: rgb(16, 217, 127);
+  --footer-color: rgb(164, 164, 164);
 }
+
+*{
+  font-family: 'lato';
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+body{
+  background-color: var(--var-body-color);
+  background-color: #f6f9fe;
+}
+
+section{
+  width: 100%;
+}
+
+
+
+.links{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  padding-bottom: 3px;
+  padding-top: 5px;
+}
+
+
+.container{
+  display: block;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 
 .box{
-  background-color: rgba(70, 100, 255, 1);
-  border: 3px solid black;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas:
-  'title date'
-  'data  data'
-  'author author';
+  background-color: var(--var-header-color);
+  background-color: #1e1d23;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
+  padding: 50px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: center;
 }
 
-.box > div{
-  border: 1px solid black;
+.links .box a{
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+
+.links .box a:hover > i{
+  color: var(--main-color);
+}
+
+.box-text{
+  font-size: 18px;
+}
+
+.box-icon{
+  color: white;
+  font-size: 30px;
 }
 
 
-@media screen and (max-width: 600px) {
-  .wrap {grid-template-columns: 1fr}
+.box h5{
+  color: blue;
+  background-color: yellow;
+}
+
+.main{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  padding: 75px 0;
+  height: 100vh;
+}
+
+.footer{
+  background-color: var(--footer-color);
+  background-color: rgb(164, 164, 164);
+  padding: 75px 0;
+}
+
+
+.main .container p{
+  padding: 0 10px;
+}
+
+.footer .container p{
+  padding: 0 10px;
+}
+
+.nav-filters{
+  text-align: center;
+}
+
+.nav-filters ul li{
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.nav-filters input[type=text], select, textarea {
+    border: 1px solid #0066ff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 3px;
+}
+
+/* padding placeholder*/
+.nav-filters input[type=text]::-webkit-input-placeholder{
+  padding-left: 2px;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-filters ul li{
+    display: block
+  }
+  .nav-filters{text-align: inherit;}
 }
