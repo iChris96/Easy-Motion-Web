@@ -1,185 +1,111 @@
-.wrap{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  padding: 5%;
-  grid-gap: 10px;
-
+:root{
+  --var-body-color: #f6f9fe;
+  --var-header-color: #1e1d23;
+  --main-color: rgb(16, 217, 127);
+  --footer-color: rgb(164, 164, 164);
+  --calendar-color: #ef4949;
 }
 
-.box{
-  background-color: rgba(70, 100, 255, 1);
-  border: 3px solid black;
-/*  display: grid;
-  grid-template-columns: 1fr; */
-  word-break: break-all;
-  word-wrap: break-word;
-  font-size: 14px;
-}
-
-.day, .title{
-  font-size: 18px;
-  background-color: #1539f0;
+*{
+  font-family: 'lato';
+  padding: 0;
+  margin: 0;
   color: white;
-  border-bottom: #050403 2px solid;
 }
-/* rows
-.box > div{
-  border: 1px solid black;
-}
-*/
-/*
-.routines{
-  overflow: hidden;
-}
-*/
 
-.suscribe{
+body{
+  background-color: var(--var-body-color);
+  background-color: #f6f9fe;
+}
+
+section{
+  width: 100%;
+}
+
+
+.container{
   display: block;
-  background-color: rgb(22, 200, 21);
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.main{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  padding: 75px 0;
+  height: 200vh;
+}
+
+.title{
+  color: black;
+  font-size: 25px;
   text-align: center;
+}
+
+/*Calendars*/
+
+.flex-calendar{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calendar{
+  background-color: var(--calendar-color);
+  background-color: #ef4949;
+
+  margin: 10px 4px;
+  width: 150px;
+  min-height: 170px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
+}
+
+.calendar p{
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 20px 0;
+}
+
+.calendar a{
   text-decoration: none;
-  color: white;
-  width: 220px;
-  margin: 10px auto;
-  border-radius: 4px;
 }
 
-.suscribe:hover{
-  background-color: rgb(14, 139, 13);
-}
-
-.titulo{
-  text-align: center;
-}
-
-
-.info{
-
-}
-
-.data{
-
-}
-
-@media screen and (max-width: 600px) {
-  .wrap {grid-template-columns: 1fr}
-}
-
-
-
-/*Modal*/
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    max-height: 70%;
-    overflow-y: auto;
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.yellow{
-  background-color: rgb(242, 167, 0);
-}
-
-.green{
-  background-color: rgb(12, 182, 8);
-}
-
-/* Button routine*/
 .routine{
   border: none;
+  width: 100%;
+  text-align: left;
   background-color: rgba(255, 255, 255, 0);
-  display: block;
-  color: white;
+  word-break: break-word;
 }
-
 .routine:hover{
   cursor: pointer;
   color: black;
 }
-
-.modal-body {
-  padding: 2px 16px;
-  font-size: 12px;
-  background-image: linear-gradient(to bottom, #444cff, #8478ff, #b1a4ff, #d9d1ff, #ffffff);
-}
-
-.modal-exercices{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 5px;
-}
-
-.exercise{
-  border-top: 1px solid white;
-  word-break: break-all;
-  word-wrap: break-word;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  padding-top: 10px;
-}
-
-.modal-footer {
-    padding: 2px 16px;
-    color: white;
-}
-
-.modal-routine{
-  text-align: center;
+@media screen and (max-width: 700px) {
+  .nav-filters ul li{
+    display: block
+  }
+  .nav-filters{text-align: inherit;}
+  .flex-calendar{
+    display: block;
+  }
+  .calendar{
+    width: 90%;
+    margin: 10px auto;
+    min-height: inherit;
+  }
 }
