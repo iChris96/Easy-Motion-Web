@@ -1,4 +1,6 @@
-const per = require('./validator.js');
+import { hello } from './validator.js';
+let val = hello(); // val is "Hello";
+alert(val);
 //Traer botones
 const forms = document.getElementsByClassName('form');
 

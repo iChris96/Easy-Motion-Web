@@ -1,11 +1,3 @@
-class Persona {
-  constructor(nombre) {
-    this.nombre = nombre;
-  }
-
-  saludar() {
-     return "Hola mi nombre es " + this.nombre;
-  }
+export function hello() {
+  return "Hello World";
 }
-
-module.exports = new Persona();
