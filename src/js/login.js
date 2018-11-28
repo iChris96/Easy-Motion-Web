@@ -1,4 +1,4 @@
-const per = require('./validator');
+const per = require('../validator');
 //Traer botones
 const forms = document.getElementsByClassName('form');
 
