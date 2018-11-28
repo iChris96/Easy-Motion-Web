@@ -94,6 +94,20 @@ section{
   width: 255px;
 }
 
+.error-msg{
+  display: block;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 255px;
+  background-color: red;
+  height: 30px;
+  text-align: left;
+}
+
+.error{
+  border: 1px solid red;
+}
+
 input[type="submit"]{
   background: #24ca32;
   width: 100%;
