@@ -1,4 +1,4 @@
-export default class  Persona {
+class Persona {
   constructor(nombre) {
     this.nombre = nombre;
   }
@@ -7,3 +7,5 @@ export default class  Persona {
      return "Hola mi nombre es " + this.nombre;
   }
 }
+
+module.exports = new Persona();

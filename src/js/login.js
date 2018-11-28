@@ -1,6 +1,4 @@
-import Persona from "./js/validator"; // Ruta correcta al archivo Js
-let per= new Persona("Stack");
-console.log(per.saludar());
+const per = require('./validator');
 //Traer botones
 const forms = document.getElementsByClassName('form');
 
