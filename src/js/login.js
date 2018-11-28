@@ -1,4 +1,4 @@
-import Persona from "./validator"; // Ruta correcta al archivo Js
+import Persona from "/src/validator"; // Ruta correcta al archivo Js
 let per= new Persona("Stack");
 console.log(per.saludar());
 //Traer botones
