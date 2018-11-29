@@ -1,33 +1,38 @@
-import Validator from './validator2.js';
+import Validator from './validator.js';
 const validator = Validator;
-
 //Traer form
 const forms = document.getElementsByClassName('form');
-//console.log(forms[0].children);
-//recorrer formularios
-for(let form of forms){
-//items en formularios
-  for(let item of form.children){
-      //busca el boton del formulario
-      if(item.type == 'submit'){
-        item.addEventListener('click', validate, false);
-      }
+
+
+window.onload = iniciar;
+
+function iniciar() {
+
+  //console.log(forms[0].children);
+  //recorrer formularios
+  for(let form of forms){
+  //items en formularios
+    for(let item of form.children){
+        //busca el boton del formulario
+        if(item.type == 'submit'){
+          item.addEventListener('click', validate, false);
+        }
+    }
+      //regresa lista de msg error o regresa ok
   }
-    //regresa lista de msg error o regresa ok
 }
+
 
 function deleteErrors() {
   var msgErrors = document.getElementsByClassName('error-msg');
-  var inputsErrors = document.getElementsByClassName('error');
 
     while(msgErrors.length > 0){
         msgErrors[0].parentNode.removeChild(msgErrors[0]);
     }
 
-    for (var i = 0; i < inputsErrors.length; i++) {
-      inputsErrors[i].classList.remove('error');
-    }
-
+    document.querySelectorAll('.error').forEach(function(a) {
+      a.classList.remove('error');
+    })
 }
 
 function validate(e){
