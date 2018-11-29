@@ -1,5 +1,4 @@
 function fetch() {
-  var misCabeceras = new Headers();
   var miInit = {
     method: 'GET',
     mode: 'cors',
@@ -15,3 +14,4 @@ function fetch() {
 }
 
 fetch();
+console.log('s');
