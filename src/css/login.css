@@ -103,6 +103,10 @@ section{
   font-size: 10px;
 }
 
+.error-msg h1{
+  
+}
+
 .error{
   border: 1px solid red;
 }
