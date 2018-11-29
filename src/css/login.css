@@ -99,9 +99,8 @@ section{
   margin-top: 10px;
   border-radius: 5px;
   width: 255px;
-  background-color: red;
-  height: 30px;
   text-align: left;
+  font-size: 10px;
 }
 
 .error{
