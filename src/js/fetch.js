@@ -1,17 +1,12 @@
-function fetch() {
-  var miInit = {
-    method: 'GET',
-    mode: 'cors',
-    headers: { 'Content-Type': 'text' }
-    };
-  fetch('https://easy-motion.herokuapp.com/blog',miInit)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(myJson);
-  });
-}
-
-fetch();
-console.log('s');
+fetch('https://easy-motion.herokuapp.com/blog', {
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        method: 'GET',
+        mode: 'cors',
+    })
+    .then(response => response.ok ? response.json() : Promise.reject(response))
+    .then(json => {
+        dispatch(receiveItems(json))
+    })
+    .catch(err => console.log(err))
