@@ -2,7 +2,7 @@
   --var-body-color: #f6f9fe;
   --var-header-color: #1e1d23;
   --main-color: rgb(16, 217, 127);
-  --footer-color: rgb(164, 164, 164);
+  --footer-color: rgb(16, 217, 127);
 }
 
 *{
@@ -111,10 +111,26 @@ section{
 }
 
 .footer{
-  background-color: var(--footer-color);
-  background-color: rgb(164, 164, 164);
-  padding: 75px 0;
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  padding: 5px auto;
 }
+
+.box-footer{
+  background-color: var(--var-header-color);
+  background-color: #1e1d23;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-evenly;
+}
+
 
 
 .main .container p{

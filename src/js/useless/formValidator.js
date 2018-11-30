@@ -3,7 +3,6 @@ const validator = Validator;
 //Traer form
 const forms = document.getElementsByClassName('form');
 
-
 window.onload = iniciar;
 
 function iniciar() {
