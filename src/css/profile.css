@@ -50,9 +50,13 @@ section{
   padding: 10px 10px;
 }
 
-.profile-info label{
+.profile-info h5{
   padding: 10px 0;
   display: block;
+}
+
+.profile-info h5 i{
+  padding-right: 5px;
 }
 
 .profile-info img{

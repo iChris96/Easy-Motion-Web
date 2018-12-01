@@ -72,7 +72,7 @@ section{
 .remember{
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /*display: flex;*/
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -136,5 +136,10 @@ input[type="submit"]{
   input{width: 100%;}
   .mini-form{
     padding: 10px 0;
+   }
+   .login{
+     width: 90%;
+      margin: 0 auto;
+      min-width: 295px;
    }
 }

@@ -56,6 +56,19 @@ function traerBlog(){
   })
 
 }
+fetch('https://easy-motion.herokuapp.com/logout',{
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${myToken}`
+  },
+})
+.then(response => response.json())
+.then(data => {
+  //console.log(data);
+})
+
+}
 
 function iniciar (){
   traerBlog();
@@ -89,7 +102,7 @@ headers.append('a', '1');
 headers.append('b', '2');
 headers.get('a')
 "1"
-//search cookie 
+//search cookie
 function getCookie(name) {
   var value = "; " + document.cookie;
   var parts = value.split("; " + name + "=");

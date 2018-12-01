@@ -19,16 +19,26 @@ class Cookie {
             'Authorization': `Bearer ${myToken}`
         },
       })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      })
+      .then(response => {
+          if(response.status==200){
+            console.log('200');
+            window.location.href = "./home.html";
+          }
+        })
+
 
     }
 
     static haveSession(){
       let myToken = Cookie.getCookie('userToken');
       if(myToken != null){
+        window.location.replace("./home.html");
+      }
+    }
+
+    static noSession(){
+      let myToken = Cookie.getCookie('userToken');
+      if(myToken == null){
         window.location.replace("./home.html");
       }
     }

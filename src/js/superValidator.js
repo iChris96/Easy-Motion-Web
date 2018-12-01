@@ -45,7 +45,7 @@ class Validator {
         msg: 'Altura entre 0 y 300 CM',
       },
       isSpace:{
-        tipo: ['password','name'],
+        tipo: ['password','name','mobile'],
         metodo: function(x) {
           return x[0] == ' ';
         },

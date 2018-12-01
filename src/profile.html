@@ -18,15 +18,15 @@
               <h1>Easy-Motion</h1>
         </div>
         <div class="buttons-navBar">
-          <a href="./home.html" class="active">Inicio</a>
+          <a href="./home.html">Inicio</a>
           <div class="links-cascade">
             <a class="primary-link">Calendarios
               <i class="fa fa-caret-down"></i>
             </a>
             <div class="seconds-links">
-              <a href="./calendars.html">Express</a>
-              <a href="./calendars.html">Aumenta Musculo</a>
-              <a href="./calendars.html">Militar</a>
+              <a href="./calendar.html">Express</a>
+              <a href="./calendar.html">Aumenta Musculo</a>
+              <a href="./calendar.html">Militar</a>
             </div>
           </div>
           <div class="links-cascade">
@@ -39,19 +39,9 @@
               <a href="./blogs.html">Consejos</a>
             </div>
           </div>
-          <div class="links-cascade">
-            <a href="./calendars.html" class="primary-link">Perfil
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <div class="seconds-links">
-              <a href="./profile.html">Mi perfil</a>
-              <a href="./logOut.html">LogOut</a>
-            </div>
-          </div>
-          <a href="./index.html" class="active">LogOut</a>
+          <a href="./login.html" class="active">Login</a>
           <a href="javascript:void(0);" class="icon">&#9776;</a>
         </div>
-        <script src="./js/newNavbar.js"></script>
       </nav>
     </header>
 
@@ -61,9 +51,9 @@
         <div class="profile-info">
           <a href="./editProfile.html"><i class="fa fa-edit"></i></a>
           <img src="./img/EasyMotionLogo.png" alt="">
-          <label for="" class="name"><i class="fa fa-mobile"></i>Name</label>
-          <label for=""><i class="fa fa-mobile"></i>3315458708</label>
-          <label for=""><i class="fa fa-envelope"></i>email</label>
+          <h5 id="name"></h5>
+          <h5 id="mobile"></h5>
+          <h5 id="email"></h5>
        </div>
       </div>
     </section>
@@ -71,6 +61,7 @@
     <section class="progress">
       <div class="container">
         <div class="progress-info">
+          <a href="./progress.html"><i class="fa fa-plus"></i></a>
           <table class="table">
             <thead class="rowgroup">
               <tr class="row">
@@ -80,7 +71,7 @@
               </tr>
             </thead>
             <tbody class="rowgroup">
-              <a href="./progress.html"><i class="fa fa-plus"></i></a>
+              <!--
               <tr class="row">
                 <td class="cell">2018-05-03</td>
                 <td class="cell">85</td>
@@ -96,11 +87,15 @@
                 <td class="cell">85</td>
                 <td class="cell">180</td>
               </tr>
+            -->
 
             </tbody>
+          </table>
        </div>
       </div>
     </section>
+
+    <script  type="module" src="js/profile.js" charset="utf-8"></script>
 
 
   </body>

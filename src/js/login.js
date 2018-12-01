@@ -1,9 +1,11 @@
 import Validator from './superValidator.js';
 import NavBar from './newNavbar.js';
 const validator = Validator;
+import Cookie from './cookie.js';
 window.onload = iniciar;
 
 function iniciar() {
+  Cookie.haveSession();
   NavBar.addOptions();
   NavBar.listenNavBar();
   const forms = document.getElementsByClassName('form');
@@ -36,7 +38,8 @@ function login(){
     })
     .then(function(data) {
         if(data.status==200){
-          exito(data.data.token, 'Juaquin', data.data.userRole);
+          //console.log(data);
+          exito(data.data.userId, data.data.token, 'Juaquin', data.data.userRole);
         }else {
           invalido(inputs[0],inputs[1]);
         }
@@ -53,9 +56,10 @@ function login(){
 }
 
 
-function exito(userToken, userName, userRole){
+function exito(userId, userToken, userName, userRole){
   let nowTime = new Date();
-  nowTime.setTime(nowTime.getTime() + 5*60*1000); // in milliseconds
+  nowTime.setTime(nowTime.getTime() + 15*60*1000); // in milliseconds
+  document.cookie = `userId=${userId};path=/;expires=${nowTime.toGMTString()};`;
   document.cookie = `userToken=${userToken};path=/;expires=${nowTime.toGMTString()};`;
   document.cookie = `userName=${userName};path=/;expires=${nowTime.toGMTString()};`;
   document.cookie = `userRole=${userRole};path=/;expires=${nowTime.toGMTString()};`;
