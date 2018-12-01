@@ -18,7 +18,7 @@ class Api {
       })
       .then(function(data) {
           if(data.status==200){
-            exito(data.data.token, 'Juaquin', data.data.userRole);
+            Cookie.exito(data.data.token, 'Juaquin', data.data.userRole);
           }
       })
       .catch(function(err) {
