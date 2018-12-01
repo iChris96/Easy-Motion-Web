@@ -35,7 +35,7 @@ class NavBar {
       `
       navBarOptions.insertBefore(divElement, loginElement);
 
-      if(Number(rolCookie)==2){
+      if(Number(rolCookie)==1){
         let divElement2 = divElement.cloneNode(true);
         divElement2.innerHTML = `
         <a href="./calendars.html" class="primary-link">Admin
