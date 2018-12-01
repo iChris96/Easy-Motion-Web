@@ -89,3 +89,14 @@ headers.append('a', '1');
 headers.append('b', '2');
 headers.get('a')
 "1"
+//search cookie 
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+undefined
+let x = getCookie('name')
+undefined
+x
+"ichrisx10x"

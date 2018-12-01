@@ -2,6 +2,7 @@ window.onload = iniciar;
 
 function iniciar (){
   ultimosCalendarios();
+  document.cookie = "nombre = chris";
 }
 
 
