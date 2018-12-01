@@ -1,8 +1,11 @@
 import Validator from './superValidator.js';
+import NavBar from './newNavbar.js';
 const validator = Validator;
 window.onload = iniciar;
 
 function iniciar() {
+  NavBar.addOptions();
+  NavBar.listenNavBar();
   const forms = document.getElementsByClassName('form');
   for(let form of forms){
     Validator.listen(form);

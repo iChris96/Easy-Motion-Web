@@ -1,8 +1,10 @@
+import NavBar from './newNavbar.js';
 window.onload = iniciar;
 
 function iniciar (){
   ultimosCalendarios();
-  document.cookie = "nombre = chris";
+  NavBar.addOptions();
+  NavBar.listenNavBar();
 }
 
 
@@ -12,9 +14,9 @@ function ultimosCalendarios(){
   .then(data => {
     //console.log(data.data)
     let icons = document.querySelector('.links > article');
-    console.log(icons);
-    let jamon = data.data;
-    console.log(jamon);
+    //console.log(icons);
+    let calendars = data.data;
+
 
     var aElement = document.createElement('a');
     var iElement = document.createElement('i');
@@ -26,7 +28,7 @@ function ultimosCalendarios(){
       var newAelement = aElement.cloneNode(true);
       var newIelement = iElement.cloneNode(true);
       var newPelement = pElement.cloneNode(true);
-      var pElementText = document.createTextNode(jamon[i].name);
+      var pElementText = document.createTextNode(calendars[i].name);
       newPelement.appendChild(pElementText);
       newAelement.appendChild(newIelement);
       newAelement.appendChild(newPelement);
