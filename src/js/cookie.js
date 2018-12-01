@@ -33,7 +33,7 @@ class Cookie {
       }
     }
 
-    static logIn(userToken, userName, userRole){
+    static exito(userToken, userName, userRole){
         let nowTime = new Date();
         nowTime.setTime(nowTime.getTime() + 5*60*1000); // in milliseconds
         document.cookie = `userToken=${userToken};path=/;expires=${nowTime.toGMTString()};`;
@@ -43,6 +43,7 @@ class Cookie {
         window.location.replace("./home.html");
         //window.location.replace("file:///home/chrislap/Dropbox/Easy-Motion-Web/src/home.html");
     }
+
 
 }
 export default Cookie;
