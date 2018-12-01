@@ -27,6 +27,7 @@ function getUser(){
     if(data.status==200){
       paintUser(data.data.name, data.data.mobile, data.data.email);
       getProgress();
+      getCalendars();
     }
   })
 }
@@ -62,7 +63,7 @@ function getProgress(){
 
 function paintProgress(arrayProgress){
   let tBody = document.getElementsByClassName('rowgroup')[1];
-  console.log(tBody);
+
   //console.log('array: ',arrayProgress);
   arrayProgress.forEach(function(element) {
     let trElement = document.createElement('tr');
@@ -86,9 +87,53 @@ function paintProgress(arrayProgress){
     trElement.appendChild(tdFecha);
     trElement.appendChild(tdWeight);
     trElement.appendChild(tdHeight);
-    console.log(trElement);
+
 
     tBody.appendChild(trElement);
   });
+
+}
+
+
+function getCalendars(){
+  let userId = Cookie.getCookie('userId');
+  let userToken = Cookie.getCookie('userToken');
+
+  fetch(`https://easy-motion.herokuapp.com/users/${userId}/calendars`,{
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${userToken}`
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    //console.log('data=',data);
+    if(data.status==200){
+      paintCalendars(data.data);
+    }
+  })
+}
+
+function paintCalendars(arrayCalendars){
+  let calendars = document.getElementsByClassName('calendars')[0];
+  console.log(calendars);
+  arrayCalendars.forEach(function(element) {
+    //element.id
+    //element.name
+    console.log(element);
+    let aElement = document.createElement('a');
+    aElement.classList.add('calendar');
+    let hElement = document.createElement('h4');
+    let text = document.createTextNode(element.name);
+    aElement.href='./calendar.html';
+    hElement.appendChild(text);
+
+    aElement.appendChild(hElement);
+    console.log(aElement);
+
+    calendars.appendChild(aElement);
+
+  })
 
 }

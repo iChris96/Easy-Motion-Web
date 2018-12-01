@@ -110,6 +110,36 @@ th{
   background-color:  #1e1d23;
 }
 
+/*calendars*/
+.calendars{
+  background-color: var(--main-color);
+  background-color: rgb(16, 217, 127);
+  -webkit-box-shadow: 0px 3px 10px black;
+          box-shadow: 0px 3px 10px black;
+  display: block;
+  text-align: center;
+  width: 70%;
+  padding: 10px 10px;
+}
+
+.calendar{
+  display: block;
+  background-color: rgb(0, 100, 251);
+  width: 80%;
+  height: 50px;
+  margin: 20px auto;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.calendar h4{
+  padding-top: 10px;
+}
+
+.calendar:hover{
+  background-color: rgb(4, 83, 201);
+  cursor: pointer;
+}
 
 @media screen and (max-width: 400px) {
 
