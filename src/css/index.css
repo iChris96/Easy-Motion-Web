@@ -72,6 +72,7 @@ img{
   width: 300px;
 }
 
+/* FIXME device-width no tiene un compartamiento esperado en todos los devices */
 @media screen and (max-device-width: 900px) {
   .slider{
     float: none;
