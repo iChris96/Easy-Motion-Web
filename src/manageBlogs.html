@@ -61,7 +61,7 @@
         <div class="nav-filters">
             <ul>
               <li>
-                <label for="">Autor:</label>
+                <label for="">Autor:</label> <!-- FIXME todos los label deben tener el valor del atributo for hacia el id del input relacionado -->
                 <input type="text" name="Auth" value="" placeholder="Autor">
               </li>
               <li>
@@ -85,8 +85,8 @@
             <th class="columnheader">
               <a class="sort" href="#">Id</a>
               <div class="order">
-                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
-                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a> <!-- FIXME doble cierre de etiqueta -->
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a> <!-- FIXME los anchors se utilizan para enlaces, si por el contrario son acciones deberian ser botones -->
               </div>
             </th>
             <th class="columnheader">
