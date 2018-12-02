@@ -1,124 +1,110 @@
 "use strict";
 
-var _validator = _interopRequireDefault(require("./validator2.js"));
+var _superValidator = _interopRequireDefault(require("./superValidator.js"));
+
+var _newNavbar = _interopRequireDefault(require("./newNavbar.js"));
+
+var _cookie = _interopRequireDefault(require("./cookie.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var validator = _validator.default; //Traer form
+var validator = _superValidator.default;
+window.onload = iniciar;
 
-var forms = document.getElementsByClassName('form'); //console.log(forms[0].children);
-//recorrer formularios
+function iniciar() {
+  _cookie.default.haveSession();
 
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+  _newNavbar.default.addOptions();
 
-try {
-  for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var form = _step.value;
-    //items en formularios
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+  _newNavbar.default.listenNavBar();
 
-    try {
-      for (var _iterator3 = form.children[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-        var item = _step3.value;
-
-        //busca el boton del formulario
-        if (item.type == 'submit') {
-          item.addEventListener('click', validate, false);
-        }
-      } //regresa lista de msg error o regresa ok
-
-    } catch (err) {
-      _didIteratorError3 = true;
-      _iteratorError3 = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
-          _iterator3.return();
-        }
-      } finally {
-        if (_didIteratorError3) {
-          throw _iteratorError3;
-        }
-      }
-    }
-  }
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator.return != null) {
-      _iterator.return();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
-}
-
-function deleteErrors() {
-  var msgErrors = document.getElementsByClassName('error-msg');
-  var inputsErrors = document.getElementsByClassName('error');
-
-  while (msgErrors.length > 0) {
-    msgErrors[0].parentNode.removeChild(msgErrors[0]);
-  }
-
-  for (var i = 0; i < inputsErrors.length; i++) {
-    inputsErrors[i].classList.remove('error');
-  }
-}
-
-function validate(e) {
-  var form = e.target.parentNode;
-  deleteErrors();
-  var _iteratorNormalCompletion2 = true;
-  var _didIteratorError2 = false;
-  var _iteratorError2 = undefined;
+  var forms = document.getElementsByClassName('form');
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
 
   try {
-    for (var _iterator2 = form[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var item = _step2.value;
+    for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var form = _step.value;
 
-      if (item.type != 'submit') {
-        var msg = _validator.default.validateSomething(item.name, item.value); //si hay errores
+      _superValidator.default.listen(form);
 
-
-        if (msg.length > 0) {
-          e.preventDefault(); //añade clase error al input
-
-          item.classList.add('error'); //añade caja de mensajes errres
-
-          var divError = document.createElement('div');
-          divError.classList.add('error-msg');
-          msg.forEach(function (element) {
-            //console.log(element);
-            var newErrorMsg = document.createElement('h1');
-            var textError = document.createTextNode(element);
-            newErrorMsg.appendChild(textError);
-            divError.appendChild(newErrorMsg);
-          });
-          item.parentNode.insertBefore(divError, item.nextSibling);
-        }
-      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        login();
+      }, false);
     }
   } catch (err) {
-    _didIteratorError2 = true;
-    _iteratorError2 = err;
+    _didIteratorError = true;
+    _iteratorError = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-        _iterator2.return();
+      if (!_iteratorNormalCompletion && _iterator.return != null) {
+        _iterator.return();
       }
     } finally {
-      if (_didIteratorError2) {
-        throw _iteratorError2;
+      if (_didIteratorError) {
+        throw _iteratorError;
       }
     }
   }
+}
+
+function login() {
+  var inputs = document.getElementsByClassName('inputs')[0].children;
+  var email = inputs[0].value;
+  var password = inputs[1].value;
+  fetch('https://easy-motion.herokuapp.com/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password
+    })
+  }).then(function (response) {
+    //console.log('response =', response);
+    return response.json();
+  }).then(function (data) {
+    if (data.status == 200) {
+      //console.log(data);
+      exito(data.data.userId, data.data.token, 'Juaquin', data.data.userRole);
+    } else {
+      invalido(inputs[0], inputs[1]);
+    } //console.log('data = ', data);
+    //console.log('token= ', data.data.token);
+    //console.log('ok:', data.status);
+    //console.log(typeof(data.status));
+    //console.log('msg:', data.msg);
+
+  }).catch(function (err) {
+    console.error(err);
+  });
+}
+
+function exito(userId, userToken, userName, userRole) {
+  var nowTime = new Date();
+  nowTime.setTime(nowTime.getTime() + 15 * 60 * 1000); // in milliseconds
+
+  document.cookie = "userId=".concat(userId, ";path=/;expires=").concat(nowTime.toGMTString(), ";");
+  document.cookie = "userToken=".concat(userToken, ";path=/;expires=").concat(nowTime.toGMTString(), ";");
+  document.cookie = "userName=".concat(userName, ";path=/;expires=").concat(nowTime.toGMTString(), ";");
+  document.cookie = "userRole=".concat(userRole, ";path=/;expires=").concat(nowTime.toGMTString(), ";");
+  console.log('exito');
+  window.location.replace("./home.html"); //window.location.replace("file:///home/chrislap/Dropbox/Easy-Motion-Web/src/home.html");
+}
+
+function invalido(emailInput, passInput) {
+  //error a inputs
+  passInput.classList.add('error');
+  emailInput.classList.add('error'); //preparar msg y colocarlo al final
+
+  var divPassError = document.createElement('div');
+  divPassError.classList.add('error-msg');
+  var h1Error = document.createElement('h1');
+  var textError = document.createTextNode('Contraseña o correo invalido');
+  h1Error.appendChild(textError);
+  divPassError.appendChild(h1Error);
+  passInput.parentNode.insertBefore(divPassError, passInput.nextSibling);
 }

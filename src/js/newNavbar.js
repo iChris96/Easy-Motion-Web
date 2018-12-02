@@ -20,6 +20,8 @@ class NavBar {
     let nameCookie = Cookie.getCookie('userName');
     let rolCookie = Cookie.getCookie('userRole');
 
+    NavBar.getCalendars();
+
     if(nameCookie != null){
       let divElement = document.createElement('div');
       divElement.classList.add('links-cascade');
@@ -51,6 +53,29 @@ class NavBar {
       }
       loginElement.remove();
     }
+  }
+
+  static getCalendars(){
+    fetch('https://easy-motion.herokuapp.com/calendars')
+    .then(response => response.json())
+    .then(data => {
+      if(data.status==200){
+        NavBar.paintCalendars(data.data);
+      }
+    })
+  }
+
+  static paintCalendars(arrayCalendars){
+    let calendarsSecondsLinks = document.getElementsByClassName('seconds-links')[0];
+    //console.log(calendarsSecondsLinks);
+    //console.log('calendars', arrayCalendars);
+
+    arrayCalendars.forEach(function(element) {
+      let aElement = document.createElement('a');
+      aElement.href = './calendar.html';
+      aElement.innerHTML = element.name;
+      calendarsSecondsLinks.appendChild(aElement);
+    })
   }
 
 
