@@ -9,5 +9,7 @@
     "build": "babel src -d output"
   },
   "dependencies": {
+    "promise-polyfill": "^8.1.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }
