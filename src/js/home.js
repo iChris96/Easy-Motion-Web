@@ -1,5 +1,6 @@
 import NavBar from './newNavbar.js';
-
+// import Promise from 'promise-polyfill';
+// import "isomorphic-fetch"
 window.onload = iniciar;
 
 function iniciar (){
@@ -36,5 +37,6 @@ function ultimosCalendarios(){
       icons.appendChild(newAelement);
     }
   })
+
 
 }
