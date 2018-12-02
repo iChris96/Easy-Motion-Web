@@ -1,6 +1,5 @@
 import NavBar from './newNavbar.js';
-import 'whatwg-fetch';
-import Promise from 'promise-polyfill';
+
 window.onload = iniciar;
 
 function iniciar (){
