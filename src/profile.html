@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles2.css">
     <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -24,9 +25,6 @@
               <i class="fa fa-caret-down"></i>
             </a>
             <div class="seconds-links">
-              <a href="./calendar.html">Express</a>
-              <a href="./calendar.html">Aumenta Musculo</a>
-              <a href="./calendar.html">Militar</a>
             </div>
           </div>
           <div class="links-cascade">
@@ -49,7 +47,7 @@
     <section class="profile">
       <div class="container">
         <div class="profile-info">
-          <a href="./editProfile.html"><i class="fa fa-edit"></i></a>
+          <a ><i id="editProfileButton" class="fa fa-edit"></i></a>
           <img src="./img/EasyMotionLogo.png" alt="">
           <h5 id="name"></h5>
           <h5 id="mobile"></h5>
@@ -61,7 +59,7 @@
     <section class="progress">
       <div class="container">
         <div class="progress-info">
-          <a href="./progress.html"><i class="fa fa-plus"></i></a>
+          <a ><i id="addProgressButton" class="fa fa-plus"></i></a>
           <table class="table">
             <thead class="rowgroup">
               <tr class="row">
@@ -95,13 +93,49 @@
       </div>
     </section>
 
-
     <section class="progress">
       <div class="container">
         <div class="calendars">
           Mis Calendarios
 
         </div>
+      </div>
+    </section>
+
+
+    <section class="modal login">
+      <div class="container">
+        <div class="mini-form">
+          <span class="close-button">&times;</span>
+          <h2>Edita Perfil</h2>
+          <form class="form" id="editProfile">
+            <div class="inputs">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="mobile" placeholder="Celular" required>
+                <input type="text" class="" name="email" placeholder="Email" minlenght="10" required>
+
+            </div>
+            <input class="submit" type="submit" value="Editar">
+
+          </form>
+       </div>
+      </div>
+    </section>
+
+    <section class="modal login">
+      <div class="container">
+        <div class="mini-form progress">
+          <span class="close-button">&times;</span>
+          <h2>Añade Progreso</h2>
+          <form class="form">
+            <div class="inputs">
+              <input type="text" name="weight" max="3" placeholder="Peso Kg" required>
+              <input type="text" name="height" max="3" placeholder="Altura CM" required>
+            </div>
+            <input class="submit" type="submit" value="Añadir">
+
+          </form>
+       </div>
       </div>
     </section>
 

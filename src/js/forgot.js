@@ -1,6 +1,7 @@
 import Validator from './superValidator.js';
 import NavBar from './newNavbar.js';
 import Cookie from './cookie.js';
+import Api from './api.js';
 window.onload = iniciar;
 
 function iniciar() {
@@ -19,12 +20,16 @@ function iniciar() {
 
 }
 
-function send(){
-  console.log('revisa tu email');
-}
 
 function showModal(){
   let modal = document.getElementsByClassName("modal")[0];
   modal.classList.add('show-modal');
-  setTimeout(function(){location.href="./home.html"} , 4000);
+  sendRecoverMail();
+  //setTimeout(function(){location.href="./home.html"} , 4000);
+}
+
+function sendRecoverMail(){
+  let email = document.getElementsByClassName('inputs')[0].children[0].value;
+  Api.forgot(email);
+
 }

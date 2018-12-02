@@ -58,7 +58,7 @@ function login(){
 
 function exito(userId, userToken, userName, userRole){
   let nowTime = new Date();
-  nowTime.setTime(nowTime.getTime() + 15*60*1000); // in milliseconds
+  nowTime.setTime(nowTime.getTime() + 25*60*1000); // in milliseconds
   document.cookie = `userId=${userId};path=/;expires=${nowTime.toGMTString()};`;
   document.cookie = `userToken=${userToken};path=/;expires=${nowTime.toGMTString()};`;
   document.cookie = `userName=${userName};path=/;expires=${nowTime.toGMTString()};`;

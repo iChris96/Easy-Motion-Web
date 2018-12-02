@@ -47,5 +47,70 @@ class Api {
             console.log(data);
           })
       }
+
+      static forgot(email){
+        fetch('https://easy-motion.herokuapp.com/auth/forgot', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email,
+              })
+          })
+          .then(response => response.json())
+          .then(data => {
+            if(data.status==201){
+              console.log('Registrado!');
+              window.location.replace("./login.html");
+            }
+            console.log(data);
+          })
+      }
+
+      static editProfile(name, mobile, email){
+        let userId = Cookie.getCookie('userId');
+        let userToken = Cookie.getCookie('userToken');
+
+        return fetch(`https://easy-motion.herokuapp.com/users/${userId}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${userToken}`,
+              },
+              body: JSON.stringify({
+                email: email,
+                mobile: mobile,
+                name: name,
+              })
+          })
+          .then(response => response.json())
+          .then(data => {
+            //console.log(data);
+            return data;
+          })
+      }
+
+      static addProgress(weight, height){
+        let userId = Cookie.getCookie('userId');
+        let userToken = Cookie.getCookie('userToken');
+
+        return fetch(`https://easy-motion.herokuapp.com/users/${userId}/progress`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${userToken}`,
+              },
+              body: JSON.stringify({
+                weight: weight,
+                height: height,
+              })
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            return data;
+          })
+      }
 }
 export default Api;
