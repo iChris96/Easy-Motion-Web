@@ -112,5 +112,13 @@ class Api {
             return data;
           })
       }
+
+    static getBlogs(){
+      return fetch('https://easy-motion.herokuapp.com/blog')
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      })
+    }
 }
 export default Api;
