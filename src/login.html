@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Home</title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navBar">
+        <div class="logo">
+              <h1>Easy-Motion</h1>
+        </div>
+        <div class="buttons-navBar">
+          <a href="./home.html">Inicio</a>
+          <div class="links-cascade">
+            <a class="primary-link">Calendarios
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="seconds-links">
+            </div>
+          </div>
+          <div class="links-cascade">
+            <a href="./blogs.html" class="primary-link">Blogs
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="seconds-links">
+              <a href="./blogs?category=Nutri.html">Nutricion</a>
+              <a href="./blogs.html">Curiosidades</a>
+              <a href="./blogs.html">Consejos</a>
+            </div>
+          </div>
+          <a href="./login.html" class="active">Login</a>
+          <a href="javascript:void(0);" class="icon">&#9776;</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="login">
+      <div class="container">
+        <div class="mini-form">
+          <h2>Login</h2>
+          <form class="form">
+            <div class="inputs">
+                <input type="text" class="" name="email" placeholder="Email" minlenght="10" required>
+                <input type="password" class= "" name="password" placeholder="Password" required>
+            </div>
+            <div class="remember">
+                <a class="" href="./forgot.html"> <h4>Olvide mi contraseña</h4> </a>
+                <a class="" href="./register.html"> <h4>Registrar!</h4> </a>
+            </div>
+            <input class="submit" type="submit" value="Login">
+
+          </form>
+       </div>
+      </div>
+    </section>
+
+    <script  type="module" src="js/login.js" charset="utf-8"></script>
+
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "css-vars-ponyfill": "^1.15.3"
+  },
+  "scripts": {
+    "build": "babel src -d output"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "promise-polyfill": "^8.1.0",
+    "whatwg-fetch": "^3.0.0"
+  }
+}
