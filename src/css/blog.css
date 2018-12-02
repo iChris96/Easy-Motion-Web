@@ -46,8 +46,8 @@ section{
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 0px 3px 10px black;
-          box-shadow: 0px 3px 10px black;
+  -webkit-box-shadow: 0 3px 10px black;
+          box-shadow: 0 3px 10px black;
 }
 
 .blog p{
