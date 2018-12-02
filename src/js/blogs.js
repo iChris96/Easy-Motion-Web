@@ -8,17 +8,36 @@ function iniciar (){
   NavBar.addOptions();
   NavBar.listenNavBar();
   getBlogs();
+  filtros();
+}
+
+function filtros(){
+  let search = document.getElementsByClassName('searchButton')[0];
+  console.log(search);
+  search.addEventListener('click', ()=>{  borrarBlogs();});
+}
+
+function borrarBlogs(){
+  let myNode = document.getElementsByClassName('flex-blogs')[0];
+  while (myNode.firstChild) {
+      myNode.removeChild(myNode.firstChild);
+  }
 }
 
 async function getBlogs(){
+  let autor = document.getElementById('author');
+  //console.log(autor);
+  //console.log(autor.value);
+
+
   let blogs = await Api.getBlogs();
   paintBlogs(blogs.data);
 }
 
 function paintBlogs(arrayBlogs){
-  console.log(arrayBlogs);
+  //console.log(arrayBlogs);
   let blogsContainer = document.getElementsByClassName('flex-blogs')[0];
-  console.log(blogsContainer);
+  //console.log(blogsContainer);
   arrayBlogs.forEach(function(element) {
     let div = document.createElement('div');
     div.classList.add('blog');
@@ -29,8 +48,8 @@ function paintBlogs(arrayBlogs){
     a.textContent = element.title;
     h1.appendChild(a);
 
-    let h3 = document.createElement('h3');
-    h3.textContent = element.date.slice(0,10);
+    let h5 = document.createElement('h5');
+    h5.textContent = element.date.slice(0,10);
 
     let p = document.createElement('p');
     p.textContent = element.data;
@@ -39,7 +58,7 @@ function paintBlogs(arrayBlogs){
     autor.textContent = element.author;
 
     div.appendChild(h1);
-    div.appendChild(h3);
+    div.appendChild(h5);
     div.appendChild(p);
     div.appendChild(autor);
 

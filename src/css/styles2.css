@@ -80,6 +80,16 @@ header{
   color: black;
 }
 
+.searchButton{
+  font-size: 2em;
+  margin-left: 7px;
+  color: blue;
+  position: absolute;
+}
+
+.searchButton:hover{
+  cursor: pointer;
+}
 
 
 @media screen and (max-width: 600px) {
