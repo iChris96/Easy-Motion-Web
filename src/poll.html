@@ -39,7 +39,7 @@
 
   function configureAjaxCalls() {
     document.getElementById('btn').addEventListener('click', function() {
-      fetch('test.txt')
+      fetch('https://easy-motion.herokuapp.com/calendars')
         .then(ajaxPositive)
         .catch(showError);
     });
