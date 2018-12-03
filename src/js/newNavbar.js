@@ -2,7 +2,8 @@ import Cookie from './cookie.js';
 class NavBar {
 
   static listenNavBar(){
-    let btn = document.getElementsByClassName("icon");
+    let btn = document.getElementsByClassName("iconNavBar");
+    console.log(btn);
     btn[0].addEventListener("click", ()=>{
       let x = document.getElementsByClassName("buttons-navBar")[0];
       if (x.className === "buttons-navBar") {

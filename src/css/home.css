@@ -140,3 +140,9 @@ section{
 .footer .container p{
   padding: 0 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .box-footer{
+    display: block;
+  }
+}
