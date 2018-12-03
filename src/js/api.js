@@ -130,5 +130,13 @@ class Api {
         return data;
       });
   }
+
+  static getCalendar(idCalendar) {
+    return fetch(`https://easy-motion.herokuapp.com/calendars/${idCalendar}`)
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
+  }
 }
 export default Api;

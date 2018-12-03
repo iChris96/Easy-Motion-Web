@@ -9,7 +9,7 @@ function getParameterByName(name) {
 }
 
 function paintBlog(blog) {
-  console.log(blog);
+  //console.log(blog);
   const bigBlog = document.getElementsByClassName('blog')[0];
 
   let h1 = document.createElement('h1');
@@ -35,7 +35,7 @@ async function getBlog() {
   const idBlog = getParameterByName('id');
   const blog = await Api.getBlog(idBlog);
   if (blog.status === 200) {
-    console.log(blog);
+    //console.log(blog);
     paintBlog(blog.data);
   }
 }

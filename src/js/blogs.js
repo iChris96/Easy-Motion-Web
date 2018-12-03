@@ -5,7 +5,7 @@ import Api from './api.js';
 
 function filtros(){
   let search = document.getElementsByClassName('searchButton')[0];
-  console.log(search);
+  //console.log(search);
   search.addEventListener('click', ()=>{
     borrarBlogs();
     getBlogs();
