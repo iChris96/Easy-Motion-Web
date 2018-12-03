@@ -2,19 +2,14 @@ import NavBar from './newNavbar.js';
 import Api from './api.js';
 // import Promise from 'promise-polyfill';
 // import "isomorphic-fetch"
-window.onload = iniciar;
-
-function iniciar (){
-  NavBar.addOptions();
-  NavBar.listenNavBar();
-  getBlogs();
-  filtros();
-}
 
 function filtros(){
   let search = document.getElementsByClassName('searchButton')[0];
   console.log(search);
-  search.addEventListener('click', ()=>{  borrarBlogs();});
+  search.addEventListener('click', ()=>{
+    borrarBlogs();
+    getBlogs();
+  });
 }
 
 function borrarBlogs(){
@@ -25,12 +20,10 @@ function borrarBlogs(){
 }
 
 async function getBlogs(){
-  let autor = document.getElementById('author');
-  //console.log(autor);
-  //console.log(autor.value);
-
-
-  let blogs = await Api.getBlogs();
+  let author = document.getElementById('author').value;
+  let title = document.getElementById('title').value;
+  let category = document.getElementById('category').value;
+  let blogs = await Api.getBlogs(author, title, category);
   paintBlogs(blogs.data);
 }
 
@@ -66,3 +59,15 @@ function paintBlogs(arrayBlogs){
 
   })
 }
+
+function iniciar() {
+  NavBar.addOptions();
+  NavBar.listenNavBar();
+  getBlogs();
+  filtros();
+}
+
+window.addEventListener('load',
+  () => {
+    iniciar();
+  }, false);

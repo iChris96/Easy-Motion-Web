@@ -1,10 +1,11 @@
+/* eslint linebreak-style: [2, "windows"] */
 class Cookie {
-    static getCookie(name) {
+  static getCookie(name) {
       var value = "; " + document.cookie;
       var parts = value.split("; " + name + "=");
       if (parts.length == 2) return parts.pop().split(";").shift();
-    }
-    console.log("jasdj");
+  }
+
     static logOut(){
       let exp = "Thu, 01 Jan 1970 00:00:00 UTC";
       let myToken = Cookie.getCookie('userToken');
