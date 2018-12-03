@@ -121,5 +121,14 @@ class Api {
         return data;
       })
     }
+
+  static getBlog(idBlog) {
+    console.log(idBlog);
+    return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`)
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
+  }
 }
 export default Api;

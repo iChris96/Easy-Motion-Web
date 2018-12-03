@@ -37,7 +37,7 @@ function paintBlogs(arrayBlogs){
 
     let h1 = document.createElement('h1');
     let a = document.createElement('a');
-    a.href='./blog?id='+ element.id;
+    a.href='./blog.html?id='+ element.id;
     a.textContent = element.title;
     h1.appendChild(a);
 
