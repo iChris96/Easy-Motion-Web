@@ -115,7 +115,9 @@ class Api {
 
     static getBlogs(auth, title, category) {
       console.log(auth, title, category);
-      return fetch(`https://easy-motion.herokuapp.com/blog?author=${auth}&category=${category}&title=${title}`)
+      return fetch(`https://easy-motion.herokuapp.com/blog?author=${auth}&category=${category}&title=${title}`, {
+        method: 'GET',
+      })
       .then(response => response.json())
       .then(data => {
         return data;
@@ -124,7 +126,9 @@ class Api {
 
   static getBlog(idBlog) {
     console.log(idBlog);
-    return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`)
+    return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`, {
+        method: 'GET',
+      })
       .then(response => response.json())
       .then(data => {
         return data;
@@ -132,9 +136,11 @@ class Api {
   }
 
   static getCalendar(idCalendar) {
-    return fetch(`https://easy-motion.herokuapp.com/calendars/${idCalendar}`)
+    return fetch(`https://easy-motion.herokuapp.com/calendars/${idCalendar}`, {
+      method: 'GET',
+    })
       .then(response => response.json())
-      .then(data => {
+      .then((data) => {
         return data;
       });
   }

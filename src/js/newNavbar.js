@@ -72,7 +72,7 @@ class NavBar {
 
     arrayCalendars.forEach(function(element) {
       let aElement = document.createElement('a');
-      aElement.href = './calendar.html';
+      aElement.href = `./calendar.html?id=${element.id}`;
       aElement.innerHTML = element.name;
       calendarsSecondsLinks.appendChild(aElement);
     })
