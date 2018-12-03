@@ -28,6 +28,7 @@ function ultimosCalendarios(){
 
     for (var i = 0; i < 3; i++) {
       var newAelement = aElement.cloneNode(true);
+      newAelement.href = `./calendar.html?id=${calendars[i].id}`;
       var newIelement = iElement.cloneNode(true);
       var newPelement = pElement.cloneNode(true);
       var pElementText = document.createTextNode(calendars[i].name);
