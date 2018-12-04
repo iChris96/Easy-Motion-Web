@@ -1,6 +1,5 @@
 import Validator from './superValidator.js';
 import NavBar from './newNavbar.js';
-const validator = Validator;
 import Cookie from './cookie.js';
 window.onload = iniciar;
 

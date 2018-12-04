@@ -24,6 +24,7 @@
     "node-sass": "^4.10.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "es6-promise": "^4.2.5",
     "gulp-uglifycss": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",

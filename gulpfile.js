@@ -7,9 +7,9 @@ const polyfiller = require('gulp-polyfiller');
 gulp.task('babel', function() {
     return gulp.src('./src/js/*.js')
         .pipe(babel({
-            presets: ['env'],
+            presets: ['@babel/preset-env'],
         }))
-        .pipe(gulp.dest('./output/'));
+        .pipe(gulp.dest('./output/js'));
 });
 
 gulp.task('html', function(){

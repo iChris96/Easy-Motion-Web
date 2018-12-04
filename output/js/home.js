@@ -1,23 +1,27 @@
-import NavBar from './newNavbar.js';
+"use strict";
+
+var _newNavbar = _interopRequireDefault(require("./newNavbar.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 window.onload = iniciar;
 
-function iniciar (){
+function iniciar() {
   ultimosCalendarios();
-  NavBar.addOptions();
-  NavBar.listenNavBar();
+
+  _newNavbar.default.addOptions();
+
+  _newNavbar.default.listenNavBar();
 }
 
-
-function ultimosCalendarios(){
-  fetch('https://easy-motion.herokuapp.com/calendars')
-  .then(response => response.json())
-  .then(data => {
+function ultimosCalendarios() {
+  fetch('https://easy-motion.herokuapp.com/calendars').then(function (response) {
+    return response.json();
+  }).then(function (data) {
     //console.log(data.data)
-    let icons = document.querySelector('.links > article');
-    //console.log(icons);
-    let calendars = data.data;
+    var icons = document.querySelector('.links > article'); //console.log(icons);
 
-
+    var calendars = data.data;
     var aElement = document.createElement('a');
     var iElement = document.createElement('i');
     iElement.classList.add('box-icon', 'fas', 'fa-calendar-alt');
@@ -26,7 +30,7 @@ function ultimosCalendarios(){
 
     for (var i = 0; i < 3; i++) {
       var newAelement = aElement.cloneNode(true);
-      newAelement.href = `./calendar.html?id=${calendars[i].id}`;
+      newAelement.href = "./calendar.html?id=".concat(calendars[i].id);
       var newIelement = iElement.cloneNode(true);
       var newPelement = pElement.cloneNode(true);
       var pElementText = document.createTextNode(calendars[i].name);
@@ -35,5 +39,5 @@ function ultimosCalendarios(){
       newAelement.appendChild(newPelement);
       icons.appendChild(newAelement);
     }
-  })
+  });
 }
