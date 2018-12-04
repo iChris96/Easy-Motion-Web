@@ -1,0 +1,14 @@
+:root{--var-body-color:#f6f9fe;--var-header-color:#1e1d23;--main-color:#10d97f;--footer-color:#a4a4a4;--blog-color:#ef4949}
+*{font-family:'lato';padding:0;margin:0;color:white}body{background-color:var(--var-body-color);background-color:#f6f9fe}
+section{width:100%}.links{background-color:var(--main-color);background-color:#10d97f;padding-bottom:3px;padding-top:5px}
+.container{display:block;margin:0 auto;max-width:900px}.box{background-color:var(--var-header-color);background-color:#1e1d23;border-radius:2px;-webkit-box-shadow:0 3px 10px black;box-shadow:0 3px 10px black;padding:50px 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:center}
+.links .box a{text-align:center;text-decoration:none;width:120px}.links .box a:hover>i{color:var(--main-color)}
+.box-text{font-size:18px}.box-icon{color:white;font-size:30px}.box h5{color:blue;background-color:yellow}
+.main{background-color:var(--main-color);background-color:#10d97f;padding:75px 0;height:200vh}
+.nav-filters{text-align:center}.nav-filters ul li{padding-top:10px;display:inline-block}
+.nav-filters input[type=text],select,textarea{border:1px solid #06f;border-radius:4px;-webkit-box-sizing:border-box;box-sizing:border-box;color:black;padding-left:3px}
+.nav-filters input[type=text]::-webkit-input-placeholder{padding-left:2px}.flex-blogs{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0 auto;max-width:900px;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.blog{background-color:var(--blog-color);background-color:#ef4949;margin:10px auto;width:40%;padding:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-shadow:0 3px 10px black;box-shadow:0 3px 10px black}
+.blog p{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;padding:20px 0}.blog a{text-decoration:none}
+@media screen and (max-width:700px){.nav-filters ul li{display:block}.nav-filters{text-align:inherit}
+.flex-blogs{display:block}.blog{width:80%}}

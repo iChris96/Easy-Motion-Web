@@ -1,0 +1,14 @@
+.modal{position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:scale(1.1);transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s}
+.modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:white;padding:1rem 1.5rem;width:24rem;border-radius:.5rem}
+.modal-content h1{text-align:center;color:black}.close-button{float:right;width:1.5rem;line-height:1.5rem;text-align:center;cursor:pointer;border-radius:.25rem;background-color:lightgray}
+.close-button:hover{background-color:darkgray}.show-modal{opacity:1;visibility:visible;transform:scale(1.0);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s}
+.mini-form{background-color:var(--main-color);background-color:#10d97f;-webkit-box-shadow:0 3px 10px black;box-shadow:0 3px 10px black;display:block;text-align:center;padding:20px 150px}
+.container{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0 auto;max-width:900px;text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.mini-form form{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.login{padding:75px 0}.login .container p{padding:0 10px}.inputs{margin:0 0 20px}
+.remember{display:-webkit-box;display:-ms-flexbox;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin:0 0 20px}
+.remember a{text-decoration:none}.inputs input{display:block;color:black;margin-top:10px;padding-top:5px;height:30px;width:255px}
+.error-msg{display:block;margin-top:10px;border-radius:5px;width:255px;text-align:left;font-size:10px}
+.error{border:1px solid red}input[type="submit"]{background:#24ca32;width:100%;border:0;border-radius:4px;padding:12px 20px;color:#fff;font-family:inherit;font-size:inherit;font-weight:500;line-height:inherit;text-transform:uppercase;cursor:pointer;border:1px solid black}
+.submit:hover{background-color:#009d02}@media screen and (max-width:400px){.container{display:block}
+input{width:100%}.mini-form{padding:10px 0}}

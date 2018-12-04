@@ -1,62 +1,35 @@
-"use strict";
-
-var _superValidator = _interopRequireDefault(require("./superValidator.js"));
-
-var _newNavbar = _interopRequireDefault(require("./newNavbar.js"));
-
-var _cookie = _interopRequireDefault(require("./cookie.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+import Validator from './superValidator.js';
+import NavBar from './newNavbar.js';
+import Cookie from './cookie.js';
+import Api from './api.js';
 window.onload = iniciar;
 
 function iniciar() {
-  _cookie.default.haveSession();
+  Cookie.haveSession();
+  NavBar.addOptions();
+  NavBar.listenNavBar();
 
-  _newNavbar.default.addOptions();
-
-  _newNavbar.default.listenNavBar();
-
-  var forms = document.getElementsByClassName('form');
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var form = _step.value;
-
-      _superValidator.default.listen(form);
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        showModal();
-      }, false);
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
+  const forms = document.getElementsByClassName('form');
+  for(let form of forms){
+    Validator.listen(form);
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      showModal();
+    },false);
   }
+
 }
 
-function send() {
-  console.log('revisa tu email');
-}
 
-function showModal() {
-  var modal = document.getElementsByClassName("modal")[0];
+function showModal(){
+  let modal = document.getElementsByClassName("modal")[0];
   modal.classList.add('show-modal');
-  setTimeout(function () {
-    location.href = "./home.html";
-  }, 4000);
+  sendRecoverMail();
+  //setTimeout(function(){location.href="./home.html"} , 4000);
+}
+
+function sendRecoverMail(){
+  let email = document.getElementsByClassName('inputs')[0].children[0].value;
+  Api.forgot(email);
+
 }

@@ -91,7 +91,7 @@ class Api {
           })
       }
 
-      static addProgress(weight, height){
+      static addProgress(weight, height) {
         let userId = Cookie.getCookie('userId');
         let userToken = Cookie.getCookie('userToken');
 
@@ -113,12 +113,46 @@ class Api {
           })
       }
 
-    static getBlogs(){
-      return fetch('https://easy-motion.herokuapp.com/blog')
+    static getBlogs(auth, title, category) {
+      console.log(auth, title, category);
+      return fetch(`https://easy-motion.herokuapp.com/blog?author=${auth}&category=${category}&title=${title}`, {
+        method: 'GET',
+      })
       .then(response => response.json())
       .then(data => {
         return data;
       })
     }
+
+  static getBlog(idBlog) {
+    console.log(idBlog);
+    return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
+  }
+
+  static getRoutine(idRoutine) {
+    return fetch(`https://easy-motion.herokuapp.com/routines/${idRoutine}`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
+  }
+
+  static getCalendar(idCalendar) {
+    return fetch(`https://easy-motion.herokuapp.com/calendars/${idCalendar}`, {
+      method: 'GET',
+    })
+      .then(response => response.json())
+      .then((data) => {
+        return data;
+      });
+  }
 }
 export default Api;

@@ -2,7 +2,8 @@ import Cookie from './cookie.js';
 class NavBar {
 
   static listenNavBar(){
-    let btn = document.getElementsByClassName("icon");
+    let btn = document.getElementsByClassName("iconNavBar");
+    //console.log(btn);
     btn[0].addEventListener("click", ()=>{
       let x = document.getElementsByClassName("buttons-navBar")[0];
       if (x.className === "buttons-navBar") {
@@ -72,7 +73,7 @@ class NavBar {
 
     arrayCalendars.forEach(function(element) {
       let aElement = document.createElement('a');
-      aElement.href = './calendar.html';
+      aElement.href = `./calendar.html?id=${element.id}`;
       aElement.innerHTML = element.name;
       calendarsSecondsLinks.appendChild(aElement);
     })
