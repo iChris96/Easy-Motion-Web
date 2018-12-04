@@ -41,18 +41,16 @@ function iniciar() {
 
 
   const forms = document.getElementsByClassName('form');
-  for(let form of forms){
-    Validator.listen(form);
-    form.addEventListener('submit',(e)=>{
+  for (var i = 0; i < forms.length; i++) {
+    Validator.listen(forms[i]);
+    forms[i].addEventListener('submit',(e)=>{
       e.preventDefault();
-      //Saber cual form fue
       if(form.id == "editProfile"){
         edit();
       }
       else{
         add();
       }
-
     },false);
   }
 }
@@ -121,7 +119,7 @@ function getProgress(){
 
 function paintProgress(arrayProgress){
   let tBody = document.getElementsByClassName('rowgroup')[1];
-  
+
   //console.log('array: ',arrayProgress);
   arrayProgress.forEach(function(element) {
     let trElement = document.createElement('tr');

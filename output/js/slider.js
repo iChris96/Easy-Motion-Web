@@ -1,9 +1,8 @@
-"use strict";
+let slideIndex = 1;
+let prev = document.getElementsByClassName("prev")[0];
+let next = document.getElementsByClassName("next")[0];
+let dot = document.getElementsByClassName("dot");
 
-var slideIndex = 1;
-var prev = document.getElementsByClassName("prev")[0];
-var next = document.getElementsByClassName("next")[0];
-var dot = document.getElementsByClassName("dot");
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -19,63 +18,32 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
 
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+      slides[i].style.display = "none";
   }
-
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i].className.replace(" active", "");
   }
-
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
 
-setInterval(function () {
+setInterval(()=>{
   plusSlides(1);
 }, 3000);
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
 
-try {
-  var _loop = function _loop() {
-    var item = _step.value;
-    item.addEventListener("click", function () {
-      var id = Number(item.dataset.id);
+for (let item of dot) {
+  item.addEventListener("click", function() {
+      let id = Number(item.dataset.id);
       currentSlide(id);
-    });
-  };
-
-  for (var _iterator = dot[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    _loop();
-  }
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator.return != null) {
-      _iterator.return();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
+  });
 }
 
-prev.addEventListener("click", function () {
+prev.addEventListener("click",()=>{
   plusSlides(-1);
 });
-next.addEventListener("click", function () {
+next.addEventListener("click",()=>{
   plusSlides(1);
 });

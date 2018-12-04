@@ -1,115 +1,129 @@
-"use strict";
-
-var _newNavbar = _interopRequireDefault(require("./newNavbar.js"));
-
-var _api = _interopRequireDefault(require("./api.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+import NavBar from './newNavbar.js';
+import Api from './api.js';
 
 function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
+  results = regex.exec(location.search);
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 function paintCalendar(calendar) {
   // console.log(calendar);
-  var days = calendar.routinesPerDay;
-  var calendarContainer = document.getElementsByClassName('flex-calendar')[0];
-  var counter = 0;
-  days.forEach(function (day) {
+  const days = calendar.routinesPerDay;
+  const calendarContainer = document.getElementsByClassName('flex-calendar')[0];
+  let counter = 0;
+
+  days.forEach((day) => {
     console.log('day');
-    var div = document.createElement('div');
+    let div = document.createElement('div');
     div.classList.add('calendar');
-    var h6 = document.createElement('h6');
-    h6.textContent = "D\xEDa ".concat(counter);
+    let h6 = document.createElement('h6');
+    h6.textContent = `Día ${counter}`;
     div.appendChild(h6);
-
     if (day != null) {
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = day[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var routine = _step.value;
-          var button = document.createElement('button');
-          button.type = 'button';
-          button.classList.add('routine');
-          button.textContent = routine.name;
-          div.appendChild(button); //console.log(routine.name);
-          //console.log(routine.name);
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return != null) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
+      for (let routine of day) {
+        let button = document.createElement('button');
+        button.type = 'button';
+        button.classList.add('routine');
+        button.textContent = routine.name;
+        button.dataset.idRoutine = routine.id;
+        //console.log(button);
+        div.appendChild(button);
+        //console.log(routine);
+        //console.log(routine.name);
+        //console.log(routine.name);
       }
     }
-
     calendarContainer.appendChild(div);
     ++counter;
   });
+
+  listenRoutines();
 }
 
-function getCalendar() {
-  return _getCalendar.apply(this, arguments);
+async function listenRoutines() {
+  let buttons = document.getElementsByClassName('routine');
+  //console.log(buttons);
+  for (var i = 0; i < buttons.length; i++) {
+  //  console.log(buttons[i]); //second console output
+    const id = buttons[i].dataset.idRoutine;
+    buttons[i].addEventListener('click', () => {
+      modal(id);
+    })
+  }
 }
 
-function _getCalendar() {
-  _getCalendar = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
-    var idCalendar, calendar, title;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            idCalendar = getParameterByName('id');
-            _context.next = 3;
-            return _api.default.getCalendar(idCalendar);
 
-          case 3:
-            calendar = _context.sent;
+async function modal(id) {
+  let modalRoutine = document.getElementsByClassName("modal")[0];
+  let routine = await Api.getRoutine(id);
+  console.log(routine.data);
+  let rName = document.getElementById('rName');
+  rName.textContent = routine.data.name;
+  let rDescription = document.getElementById('rDescription');
+  rDescription.textContent = routine.data.description;
+  let exercisesList = document.getElementById('exercisesList');
 
-            if (calendar.status === 200) {
-              paintCalendar(calendar.data);
-              title = document.getElementsByClassName('title')[0];
-              title.textContent = calendar.data.name;
-            }
+  routine.data.exercises.forEach((element) => {
+    //let exercise = document.createElement('div');
+    //exercise.classList.add('exercise');
+    let items = document.createElement('ul');
+    items.classList.add('exercise');
 
-          case 5:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, this);
-  }));
-  return _getCalendar.apply(this, arguments);
+    let nameExercise = document.createElement('li');
+    nameExercise.textContent = 'Nombre Ejercicio: ' + element.name;
+    let bodyPartExercise = document.createElement('li');
+    bodyPartExercise.textContent = 'Parte del cuerpo: ' + element.bodyPart;
+    let trainingTypeExercise = document.createElement('li');
+    trainingTypeExercise.textContent = 'Tipo de entrenamiento: ' + element.trainingType;
+    let repetitionsExercise = document.createElement('li');
+    repetitionsExercise.textContent = 'Número de repeticiones: ' + element.repetitions;
+    let descriptionExercise = document.createElement('li');
+    descriptionExercise.textContent = 'Descripción: ' + element.description;
+
+    items.appendChild(nameExercise);
+    items.appendChild(bodyPartExercise);
+    items.appendChild(trainingTypeExercise);
+    items.appendChild(repetitionsExercise);
+    items.appendChild(descriptionExercise);
+
+    exercisesList.appendChild(items);
+
+    //console.log(element.name);
+  });
+
+
+
+
+
+
+  modalRoutine.classList.toggle("show-modal");
+}
+
+
+async function getCalendar() {
+  const idCalendar = getParameterByName('id');
+  const calendar = await Api.getCalendar(idCalendar);
+  if(calendar.status === 200) {
+    paintCalendar(calendar.data);
+    const title = document.getElementsByClassName('title')[0];
+    title.textContent = calendar.data.name;
+  }
 }
 
 function iniciar() {
-  _newNavbar.default.addOptions();
-
-  _newNavbar.default.listenNavBar();
-
+  NavBar.addOptions();
+  NavBar.listenNavBar();
   getCalendar();
+  let closeButton = document.getElementsByClassName('close-button')[0];
+  let modalRoutine = document.getElementsByClassName("modal")[0];
+  closeButton.addEventListener("click", ()=>{
+    modalRoutine.classList.toggle("show-modal");
+  });
 }
 
-window.addEventListener('load', function () {
-  iniciar();
-}, false);
+window.addEventListener('load',
+  () => {
+    iniciar();
+  }, false);

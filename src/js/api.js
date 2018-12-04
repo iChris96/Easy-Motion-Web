@@ -135,6 +135,16 @@ class Api {
       });
   }
 
+  static getRoutine(idRoutine) {
+    return fetch(`https://easy-motion.herokuapp.com/routines/${idRoutine}`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
+  }
+
   static getCalendar(idCalendar) {
     return fetch(`https://easy-motion.herokuapp.com/calendars/${idCalendar}`, {
       method: 'GET',

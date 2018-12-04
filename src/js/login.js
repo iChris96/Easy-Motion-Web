@@ -8,9 +8,9 @@ function iniciar() {
   NavBar.addOptions();
   NavBar.listenNavBar();
   const forms = document.getElementsByClassName('form');
-  for(let form of forms){
-    Validator.listen(form);
-    form.addEventListener('submit',(e)=>{
+  for (var i = 0; i < forms.length; i++) {
+    Validator.listen(forms[i]);
+    forms[i].addEventListener('submit',(e)=>{
       e.preventDefault();
       login();
     },false);

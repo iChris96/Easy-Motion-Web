@@ -3,7 +3,7 @@ class NavBar {
 
   static listenNavBar(){
     let btn = document.getElementsByClassName("iconNavBar");
-    console.log(btn);
+    //console.log(btn);
     btn[0].addEventListener("click", ()=>{
       let x = document.getElementsByClassName("buttons-navBar")[0];
       if (x.className === "buttons-navBar") {

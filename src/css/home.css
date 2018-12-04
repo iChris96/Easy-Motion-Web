@@ -13,8 +13,8 @@
 }
 
 body{
-  background-color: var(--var-body-color);
-  background-color: #f6f9fe; /* FIXME cual es el sentido de usar variables si luego ponen valores sin variables? */
+  background-color: rgb(16, 217, 127);
+  background-color: #f6f9fe;
 }
 
 section{
