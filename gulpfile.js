@@ -28,11 +28,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
   return gulp.src('./src/js/*.js')
-    .pipe(uglifycss({
-      "maxLineLen": 80,
-      "uglyComments": true
-    }))
-    .pipe(gulp.dest('./output/js'));
+  .pipe(gulp.dest('./output/js'));
 });
 
 gulp.task('polly', function () {
