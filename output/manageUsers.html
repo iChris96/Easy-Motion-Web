@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/manage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title>manageUsers</title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navBar">
+        <div class="logo">
+              <h1>Easy-Motion</h1>
+        </div>
+        <div class="buttons-navBar">
+          <a href="./home.html">Inicio</a>
+          <div class="links-cascade">
+            <a class="primary-link">Calendarios
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="seconds-links">
+            </div>
+          </div>
+          <a href="./blogs.html">Blogs</a>
+          <a href="./login.html" class="active">Login</a>
+          <button class="iconNavBar">&#9776;</button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="links">
+      <article class="box container">
+        <div class="nav-filters">
+            <ul>
+              <li>
+                <label for="">Name:</label>
+                <input type="text" name="Name" value="" placeholder="Nombre">
+              </li>
+              <li>
+                <label for="">Email:</label>
+                <input type="text" name="Email" value="" placeholder="Email">
+              </li>
+              <li>
+                <label for="">Mobile:</label>
+                <input type="text" name="Mobile" value="" placeholder="Mobile">
+              </li>
+            </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="main">
+      <table class="table">
+        <thead class="rowgroup">
+          <tr class="row">
+            <th class="columnheader">Select</th>
+            <th class="columnheader">
+              <a class="sort" href="#">Id</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Name</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Mobile</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Email</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Role</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Confirmed</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">Options</th>
+          </tr>
+        </thead>
+        <tbody class="rowgroup"> <!-- FIXME si todas las celdas usas la clase cell es mejor hacerlo directo en el css que poner la clase en cada una -->
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">1</td>
+            <td class="cell">Roberto Gonzales</td>
+            <td class="cell">33214568</td>
+            <td class="cell">Roberto@gmail.com</td>
+            <td class="cell">Admin</td>
+            <td class="cell">Confirmado</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">1</td>
+            <td class="cell">Roberto Gonzales</td>
+            <td class="cell">33214568</td>
+            <td class="cell">Roberto@gmail.com</td>
+            <td class="cell">Admin</td>
+            <td class="cell">Confirmado</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">2</td>
+            <td class="cell">Roberto Gonzales</td>
+            <td class="cell">33214568</td>
+            <td class="cell">Roberto@gmail.com</td>
+            <td class="cell">User</td>
+            <td class="cell">No Confirmado</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="buttons container">
+        <button class="deleteAllButton" type="button" name="deleteAll">Eliminar Sel</button>
+        <button class="createButton" id="myBtn">Nuevo Blog</button>
+      </div>
+    </section>
+
+
+  </body>
+</html>

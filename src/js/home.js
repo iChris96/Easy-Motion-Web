@@ -36,6 +36,4 @@ function ultimosCalendarios(){
       icons.appendChild(newAelement);
     }
   })
-
-
 }

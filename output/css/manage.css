@@ -1,0 +1,17 @@
+:root{--var-body-color:#f6f9fe;--var-header-color:#1e1d23;--main-color:#10d97f;--footer-color:#a4a4a4;--blog-color:#ef4949;--edit-color:#ffc500;--delete-color:#fd0000;--create-color:#34b707}
+*{font-family:'lato';padding:0;margin:0;color:white}body{background-color:var(--main-color);background-color:#10d97f}
+section{width:100%}.links{background-color:var(--main-color);background-color:#10d97f;padding-bottom:3px;padding-top:5px}
+.container{display:block;margin:0 auto;max-width:900px}.box{background-color:var(--var-header-color);background-color:#1e1d23;border-radius:2px;-webkit-box-shadow:0 3px 10px black;box-shadow:0 3px 10px black;padding:50px 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:center}
+.main{background-color:var(--main-color);background-color:#10d97f;padding:75px 0;height:200vh}
+.nav-filters{text-align:center}.nav-filters ul li{padding-top:10px;display:inline-block}
+.nav-filters input[type=text],select,textarea{border:1px solid #06f;border-radius:4px;-webkit-box-sizing:border-box;box-sizing:border-box;color:black;padding-left:3px}
+.nav-filters input[type=text]::-webkit-input-placeholder{padding-left:2px}.table{margin:0 auto;min-width:900px;width:80%}
+.order{float:right}.sort{text-decoration:none}th{background-color:#9a9a9c}.columnheader,.cell{border:1px solid black}
+.cell{overflow:hidden;max-width:120px;padding:4px 5px;background-color:white;color:black}
+.cellcenter{text-align:center}button{border:1px solid black}button:hover{cursor:pointer}
+.editButton{width:95%;background-color:var(--edit-color);background-color:#ffc500;--edit-color:#ffc500;--delete-color:#fd0000}
+.deleteButton{width:95%;background-color:var(--delete-color);background-color:#fd0000}
+.buttons{padding-top:40px}.deleteAllButton{width:93px;height:25px;background-color:var(--delete-color);background-color:#fd0000}
+.createButton{width:93px;height:25px;background-color:var(--create-color);background-color:#34b707}
+@media screen and (max-width:700px){.nav-filters ul li{display:block}.nav-filters{text-align:inherit}
+.table{width:inherit}}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fetch</title>
+</head>
+<body>
+  <button id="btn">Hacer una conexión con Ajax</button>
+  <p id="respuesta"></p>
+
+  <script>
+
+  function cargarScript(src, hecho) {
+    var js = document.createElement('script');
+    js.src = src;
+    js.onload = function() {
+      hecho();
+    };
+    js.onerror = function() {
+      hecho(new Error('Intento fallido de cargar el script ' + src));
+    };
+    document.head.appendChild(js);
+  }
+
+  document.addEventListener('DOMContentLoaded', initialize);
+
+  function initialize() {
+    //compruebo si dispongo de fetch
+    if(! window.fetch) {
+      console.log('no tengo fetch, debo cargar los polyfills');
+      cargarScript('./polyfills.js', configureAjaxCalls);
+    } else {
+      console.log('Sí dispongo de fetch');
+      configureAjaxCalls();
+    }
+  }
+
+  function configureAjaxCalls() {
+    document.getElementById('btn').addEventListener('click', function() {
+      fetch('https://easy-motion.herokuapp.com/calendars')
+        .then(ajaxPositive)
+        .catch(showError);
+    });
+
+    function ajaxPositive(response) {
+      console.log('response.ok: ', response.ok);
+      if(response.ok) {
+        response.text().then(showResult);
+      } else {
+        showError('status code: ' + response.status);
+        return false;
+      }
+    }
+
+    function showResult(txt) {
+      console.log('muestro respuesta: ', txt);
+      if(txt) {
+        var resElement = document.getElementById('respuesta');
+        resElement.textContent = txt;
+        resElement.style.color = 'blue';
+      }
+    }
+
+    function showError(err) {
+      console.log('muestor error', err);
+      var resElement = document.getElementById('respuesta');
+      resElement.textContent = 'Hubo un error: ' + err;
+      resElement.style.color = 'red';
+    }
+  }
+  </script>
+</body>
+</html>

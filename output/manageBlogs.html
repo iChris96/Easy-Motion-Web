@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/manage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title>Home</title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navBar">
+        <div class="logo">
+              <h1>Easy-Motion</h1>
+        </div>
+        <div class="buttons-navBar">
+          <a href="./home.html">Inicio</a>
+          <div class="links-cascade">
+            <a class="primary-link">Calendarios
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="seconds-links">
+            </div>
+          </div>
+          <a href="./blogs.html">Blogs</a>
+          <a href="./login.html" class="active">Login</a>
+          <button class="iconNavBar">&#9776;</button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="links">
+      <article class="box container">
+        <div class="nav-filters">
+            <ul>
+              <li>
+                <label for="">Autor:</label> <!-- FIXME todos los label deben tener el valor del atributo for hacia el id del input relacionado -->
+                <input type="text" name="Auth" value="" placeholder="Autor">
+              </li>
+              <li>
+                <label for="">Titulo:</label>
+                <input type="text" name="Title" value="" placeholder="Titulo">
+              </li>
+              <li>
+                <label for="">Categoria:</label>
+                <input type="text" name="Category" value="" placeholder="Categoria">
+              </li>
+            </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="main">
+      <table class="table">
+        <thead class="rowgroup">
+          <tr class="row">
+            <th class="columnheader">Select</th>
+            <th class="columnheader">
+              <a class="sort" href="#">Id</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a> <!-- FIXME doble cierre de etiqueta -->
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a> <!-- FIXME los anchors se utilizan para enlaces, si por el contrario son acciones deberian ser botones -->
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Title</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Data</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Date</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Author</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">
+              <a class="sort" href="#">Category</a>
+              <div class="order">
+                <a href="#"><i class="fas fa-arrow-circle-up"></i></i></a>
+                <a href="#"><i class="fas fa-arrow-circle-down"></i></i></a>
+              </div>
+            </th>
+            <th class="columnheader">Options</th>
+          </tr>
+        </thead>
+        <tbody class="rowgroup">
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">1</td>
+            <td class="cell">Este es un titulo algo medianoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</td>
+            <td class="cell">En nueva york....</td>
+            <td class="cell">2018-02-12</td>
+            <td class="cell">Juan Roberto Guzman</td>
+            <td class="cell">Nutricion</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">2</td>
+            <td class="cell">Este es un titulo algo mediano</td>
+            <td class="cell">En nueva york....</td>
+            <td class="cell">2018-02-12</td>
+            <td class="cell">Juan Roberto Guzman</td>
+            <td class="cell">Nutricion</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="cell cellcenter"><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></td>
+            <td class="cell">123</td>
+            <td class="cell">Este es un titulo algo mediano</td>
+            <td class="cell">En nueva york....</td>
+            <td class="cell">2018-02-12</td>
+            <td class="cell">Juan Roberto Guzman</td>
+            <td class="cell">Nutricion</td>
+            <td class="cell">
+              <button class="editButton" data-id="1" data-title="titulo" data-author="author1">Edita</button>
+              <button class="deleteButton"><i class="fa fa-close"></i>Elimina</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="buttons container">
+        <button class="deleteAllButton" type="button" name="deleteAll">Eliminar Sel</button>
+        <button class="createButton" id="myBtn">Nuevo Blog</button>
+      </div>
+    </section>
+
+
+  </body>
+</html>

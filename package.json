@@ -1,21 +1,31 @@
 {
+  "name": "miApp",
+  "version": "0.0.1",
+  "scripts": {
+    "gulp": "gulp",
+    "minify": "gulp minify"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "css-vars-ponyfill": "^1.15.3",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "htmlhint": "^0.10.1"
-  },
-  "scripts": {
-    "build": "babel src -d output"
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-install": "^1.1.0",
+    "gulp-polyfiller": "0.0.1",
+    "gulp-sass": "^4.0.2",
+    "htmlhint": "^0.10.1",
+    "node-sass": "^4.10.0"
   },
   "dependencies": {
     "es6-promise": "^4.2.5",
+    "gulp-uglifycss": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "promise-polyfill": "^8.1.0",
     "whatwg-fetch": "^3.0.0"

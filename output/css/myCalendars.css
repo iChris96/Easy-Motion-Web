@@ -1,0 +1,4 @@
+:root{--main-nav-bar-color:#0f00ffcc;--main-nav-bar-color-active:#0a00a8;--main-nav-bar-element-selected:#001769}
+img{border-radius:50%;width:100px;height:100px}.container{-webkit-box-shadow:14px 10px 12px -2px rgba(0,0,0,0.25);-moz-box-shadow:14px 10px 12px -2px rgba(0,0,0,0.25);box-shadow:14px 10px 12px -2px rgba(0,0,0,0.25);margin:auto;margin-top:10px;padding-top:10px;background-color:var(--main-nav-bar-color);width:40%;text-align:center}
+label{display:block;padding-top:10px;font-size:22px;color:#e3e2e2}label i{float:right;margin-right:10px}
+label i:hover{text-shadow:0 0 30px white}
