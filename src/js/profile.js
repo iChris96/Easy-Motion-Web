@@ -41,14 +41,17 @@ function iniciar() {
 
 
   const forms = document.getElementsByClassName('form');
+  //console.log(forms);
   for (var i = 0; i < forms.length; i++) {
     Validator.listen(forms[i]);
     forms[i].addEventListener('submit',(e)=>{
       e.preventDefault();
-      if(form.id == "editProfile"){
+      if(e.originalTarget.id == "editProfile"){
+        console.log('editaste perfile');
         edit();
       }
       else{
+        console.log('añadiste progreso');
         add();
       }
     },false);
@@ -59,7 +62,8 @@ function iniciar() {
 function getUser(){
   let userId = Cookie.getCookie('userId');
   let userToken = Cookie.getCookie('userToken');
-
+  console.log(userId);
+  console.log(userToken);
   fetch(`https://easy-motion.herokuapp.com/users/${userId}`,{
     method: 'GET',
     headers: {
@@ -69,9 +73,9 @@ function getUser(){
   })
   .then(response => response.json())
   .then(data => {
-    //console.log('data=',data);
+    console.log('data=',data);
     if(data.status==200){
-      //console.log(data);
+      console.log(data);
       paintUser(data.data.name, data.data.mobile, data.data.email);
       paintEditModal(data.data.name, data.data.mobile, data.data.email);
       getProgress();
@@ -171,10 +175,10 @@ function getCalendars(){
   })
 }
 
-function paintCalendars(arrayCalendars){
+function paintCalendars(arrayCalendars) {
   let calendars = document.getElementsByClassName('calendars')[0];
   //console.log(calendars);
-  arrayCalendars.forEach(function(element) {
+  arrayCalendars.forEach((element) => {
     //element.id
     //element.name
     //console.log(element);
@@ -182,7 +186,7 @@ function paintCalendars(arrayCalendars){
     aElement.classList.add('calendar');
     let hElement = document.createElement('h4');
     let text = document.createTextNode(element.name);
-    aElement.href='./calendar.html';
+    aElement.href=`./calendar.html?id=${element.id}`;
     hElement.appendChild(text);
 
     aElement.appendChild(hElement);
