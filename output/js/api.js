@@ -113,19 +113,32 @@ class Api {
           })
       }
 
-    static getBlogs(auth, title, category) {
-      console.log(auth, title, category);
-      return fetch(`https://easy-motion.herokuapp.com/blog?author=${auth}&category=${category}&title=${title}`, {
+    static getBlogs(auth, title, category, page) {
+      // console.log(auth, title, category);
+      return fetch(`https://easy-motion.herokuapp.com/blog?page=${page}&author=${auth}&category=${category}&title=${title}`, {
         method: 'GET',
       })
       .then(response => response.json())
       .then(data => {
+        // console.log(data);
+        return data;
+      })
+    }
+
+    static getallBlogs() {
+      // console.log(auth, title, category);
+      return fetch(`https://easy-motion.herokuapp.com/blog`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data);
         return data;
       })
     }
 
   static getBlog(idBlog) {
-    console.log(idBlog);
+    //console.log(idBlog);
     return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`, {
         method: 'GET',
       })
@@ -153,6 +166,53 @@ class Api {
       .then((data) => {
         return data;
       });
+  }
+
+  static isSuscribe(idCalendar, userId) {
+    let userToken = Cookie.getCookie('userToken');
+    return fetch(`https://easy-motion.herokuapp.com/users/${userId}/calendars`, {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${userToken}`,
+          },
+      })
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      })
+  }
+
+  static assignCalendar(idCalendar, userId) {
+    let userToken = Cookie.getCookie('userToken');
+    return fetch(`https://easy-motion.herokuapp.com/users/${userId}/calendars`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userToken}`,
+      },
+      body: JSON.stringify({
+        calendarId: idCalendar,
+      })
+    })
+    .then(response => response.json())
+    .then(data => {return data;})
+  }
+
+  static unassignCalendar(idCalendar, userId) {
+    let userToken = Cookie.getCookie('userToken');
+    return fetch(`https://easy-motion.herokuapp.com/users/${userId}/calendars`, {
+      method: 'DELETE',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userToken}`,
+      },
+      body: JSON.stringify({
+        calendarId: idCalendar,
+      })
+    })
+    .then(response => response.json())
+    .then(data => {return data;})
   }
 }
 export default Api;
