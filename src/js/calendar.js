@@ -1,5 +1,6 @@
 import NavBar from './newNavbar.js';
 import Api from './api.js';
+import Cookie from './cookie.js';
 
 function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -15,7 +16,6 @@ function paintCalendar(calendar) {
   let counter = 0;
 
   days.forEach((day) => {
-    console.log('day');
     let div = document.createElement('div');
     div.classList.add('calendar');
     let h6 = document.createElement('h6');
@@ -112,16 +112,71 @@ async function getCalendar() {
   }
 }
 
+async function paintAssignButton(calendarId, userId){
+  const assignButton = document.getElementsByClassName('assignButton')[0];
+  assignButton.classList.add('show');
+  assignButton.addEventListener('click', () => {
+    // console.log(calendarId, userId);
+    suscribe(calendarId, userId);
+  });
+}
+
+
+async function suscribe(calendarId, userId){
+  let isSuscribe = await Api.assignCalendar(calendarId, userId);
+  //console.log(isSuscribe);
+  if(isSuscribe.status == 201){
+    const assignButton = document.getElementsByClassName('assignButton')[0];
+    assignButton.classList.remove('show');
+  //  console.log(assignButton);
+    paintUnassgnButton(calendarId, userId);
+  }
+}
+
+async function unSuscribe(calendarId, userId){
+  let unSuscribe = await Api.unassignCalendar(calendarId, userId);
+  // console.log(unSuscribe);
+  if(unSuscribe.status == 200){
+    const unassignButton = document.getElementsByClassName('unassignButton')[0];
+    unassignButton.classList.remove('show');
+    paintAssignButton(calendarId, userId);
+  }
+}
+
+
+function paintUnassgnButton(calendarId, userId){
+  const unassignButton = document.getElementsByClassName('unassignButton')[0];
+  unassignButton.classList.add('show');
+  unassignButton.addEventListener('click', () => {
+    // console.log(calendarId, userId);
+    unSuscribe(calendarId, userId);
+  });
+}
+
+async function detectButton(){
+  const calendarId = getParameterByName('id');
+  const userId = Cookie.getCookie('userId');
+  if(userId != null){
+    let userData = await Api.isSuscribe(userId, userId);
+    let userHaveCalendar;
+    // console.log(userData);
+    userData.data.some(elem => elem.id == calendarId) == true ? paintUnassgnButton(calendarId, userId) : paintAssignButton(calendarId, userId);
+  }
+}
+
+
 function iniciar() {
   NavBar.addOptions();
   NavBar.listenNavBar();
   getCalendar();
-  let closeButton = document.getElementsByClassName('close-button')[0];
-  let modalRoutine = document.getElementsByClassName("modal")[0];
-  closeButton.addEventListener("click", ()=>{
+  detectButton();
+  const closeButton = document.getElementsByClassName('close-button')[0];
+  const modalRoutine = document.getElementsByClassName("modal")[0];
+  closeButton.addEventListener('click', ()=>{
     modalRoutine.classList.toggle("show-modal");
   });
 }
+
 
 window.addEventListener('load',
   () => {

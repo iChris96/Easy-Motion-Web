@@ -40,6 +40,32 @@ section{
   text-align: left;
 }
 
+.button-align{
+  padding-top: 10px;
+  text-align: center;
+  background-color: rgb(16, 217, 127);
+}
+
+.button-align button{
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.assignButton{
+  background-color: rgb(16, 196, 61);
+  display: none;
+}
+
+.unassignButton{
+  background-color: rgb(203, 29, 29);
+  display: none;
+}
+
+.show{
+  display: initial;
+}
+
 .exercise{
   list-style-type: none;
   padding-bottom: 10px;
