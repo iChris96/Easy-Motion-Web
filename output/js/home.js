@@ -2,11 +2,22 @@ import NavBar from './newNavbar.js';
 window.onload = iniciar;
 
 function iniciar (){
+  slide();
   ultimosCalendarios();
   NavBar.addOptions();
   NavBar.listenNavBar();
 }
 
+function slide() {
+    let img = document.getElementsByClassName('cover');
+    let counter = 0;
+    setInterval(function(){
+      img[counter].classList.remove('show');
+      if(counter > 1){ counter = 0}
+      else{ ++counter;} //2
+      img[counter].classList.add('show');
+      }, 3000);
+}
 
 function ultimosCalendarios(){
   fetch('https://easy-motion.herokuapp.com/calendars')

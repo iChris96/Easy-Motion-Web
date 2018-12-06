@@ -35,18 +35,12 @@ function iniciar() {
       addProgressModal.classList.toggle("show-modal");
   });
 
-
-
-
-
-
   const forms = document.getElementsByClassName('form');
-  //console.log(forms);
-  for (var i = 0; i < forms.length; i++) {
-    Validator.listen(forms[i]);
-    forms[i].addEventListener('submit',(e)=>{
+  for(let form of forms){
+    Validator.listen(form);
+    form.addEventListener('submit',(e)=>{
       e.preventDefault();
-      if(e.originalTarget.id == "editProfile"){
+      if(form.id == "editProfile"){
         console.log('editaste perfile');
         edit();
       }
