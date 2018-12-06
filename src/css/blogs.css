@@ -1,9 +1,9 @@
-:root{
-  --var-body-color: #f6f9fe;
-  --var-header-color: #1e1d23;
+:root {
+  --var-body-color: rgb(7, 204, 145);
+  --var-header-color: rgb(36, 35, 33);
   --main-color: rgb(16, 217, 127);
   --footer-color: rgb(164, 164, 164);
-  --blog-color: #ef4949;
+  --blog-color: rgb(238, 73, 73);
 }
 
 *{
@@ -14,8 +14,7 @@
 }
 
 body{
-  background-color: var(--var-body-color);
-  background-color: #f6f9fe;
+  background-color: rgb(16, 217, 127);
 }
 
 section{
@@ -31,11 +30,34 @@ section{
   padding-top: 5px;
 }
 
+.nav-filters button{
+  background-color: rgba(4, 255, 124, 0);
+  border: 1px solid white;
+  width: 40px;
+  margin-left: 32px;
+  margin-right: 36px;
+}
+
+.nav-filters button:hover{
+  cursor: pointer;
+}
 
 .container{
   display: block;
   margin: 0 auto;
   max-width: 900px;
+}
+
+.arrowLeft{
+  display: none;
+}
+
+.arrowRight{
+  display: none;
+}
+
+.show{
+  display: inline;
 }
 
 
@@ -151,11 +173,15 @@ section{
   text-decoration: none;
 }
 
+.blog a:hover{
+  color: black;
+}
+
 @media screen and (max-width: 700px) {
   .nav-filters ul li{
     display: block
   }
-  .nav-filters{text-align: inherit;}
+  .nav-filters{text-align: center;}
   .flex-blogs{
     display: block;
   }

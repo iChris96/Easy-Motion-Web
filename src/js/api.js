@@ -113,19 +113,32 @@ class Api {
           })
       }
 
-    static getBlogs(auth, title, category) {
-      console.log(auth, title, category);
-      return fetch(`https://easy-motion.herokuapp.com/blog?author=${auth}&category=${category}&title=${title}`, {
+    static getBlogs(auth, title, category, page) {
+      // console.log(auth, title, category);
+      return fetch(`https://easy-motion.herokuapp.com/blog?page=${page}&author=${auth}&category=${category}&title=${title}`, {
         method: 'GET',
       })
       .then(response => response.json())
       .then(data => {
+        // console.log(data);
+        return data;
+      })
+    }
+
+    static getallBlogs() {
+      // console.log(auth, title, category);
+      return fetch(`https://easy-motion.herokuapp.com/blog`, {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data);
         return data;
       })
     }
 
   static getBlog(idBlog) {
-    console.log(idBlog);
+    //console.log(idBlog);
     return fetch(`https://easy-motion.herokuapp.com/blog/${idBlog}`, {
         method: 'GET',
       })
