@@ -21,13 +21,31 @@ section{
 }
 
 
-.slider{
+.slider0{
   background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(4, 255, 197, 0.5)), to(rgba(0, 0, 0, 0.5)) ), url(../img/test-photo.jpg);
   background-image: -webkit-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
   background-image: -o-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
   background-image: linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo.jpg);
   background-position: bottom;
 }
+
+.slider1{
+  background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(4, 255, 197, 0.5)), to(rgba(0, 0, 0, 0.5)) ), url(../img/test-photo1.jpg);
+  background-image: -webkit-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo1.jpg);
+  background-image: -o-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo1.jpg);
+  background-image: linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo1.jpg);
+  background-position: bottom;
+}
+
+.slider2{
+  background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(4, 255, 197, 0.5)), to(rgba(0, 0, 0, 0.5)) ), url(../img/test-photo2.jpg);
+  background-image: -webkit-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo2.jpg);
+  background-image: -o-linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo2.jpg);
+  background-image: linear-gradient( rgba(4, 255, 197, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/test-photo2.jpg);
+  background-position: bottom;
+}
+
+
 
 .cover{
   -webkit-box-align: center;
@@ -46,6 +64,7 @@ section{
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+          display: none;
 }
 
 
@@ -60,6 +79,10 @@ section{
   display: block;
   margin: 0 auto;
   max-width: 900px;
+}
+
+.show {
+  display: block;
 }
 
 
