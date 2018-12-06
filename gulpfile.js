@@ -4,6 +4,19 @@ const uglifycss = require('gulp-uglifycss');
 const polyfiller = require('gulp-polyfiller');
 
 
+gulp.task('es6-es5', function (){
+  return gulp.src('./src/js/*.js')
+        .pipi(sourcemaps.init())
+        .pipe(concat('cliente.min.js'))
+        .pipe(babel({
+          presets: ['es2015']
+        }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./output/js'));
+});
+
+
 gulp.task('babel', function() {
     return gulp.src('./src/js/*.js')
         .pipe(babel({
